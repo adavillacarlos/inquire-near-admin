@@ -5,21 +5,21 @@ import Title from "../components/title/title";
 import Table from "../components/table/user";
 
 const Users = () => {
-    return (
-      <div className="layout">
-        <Sidebar />
-        <div className="main">
+  return (
+    <div className="layout">
+      <Sidebar />
+      <div className="main">
         <div className="container">
           <Navbar />
-          <Title title="Users"/>
+          <Title title="Users" />
           <div className="listContainer">
-          <div className="listTitle">Total Users</div>
-          <Table />
-        </div>
-          </div> 
+            <div className="listTitle">Total Users</div>
+            <Table />
+          </div>
         </div>
       </div>
-    );
-  };
-  
-  export default Users;
+    </div>
+  );
+};
+
+export default Users;
