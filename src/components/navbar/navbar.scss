@@ -1,0 +1,28 @@
+.navbar {
+  border-bottom: 0.5px solid #DADADA;
+  width: 100%;
+  overflow: auto;
+
+  .wrapper {
+    
+    .items {
+      padding: 30px;
+      display: flex;
+      float: right;
+
+      .item {
+
+        .userName{
+          font-size: 20px;
+          font-weight: bold;
+          color: #000000;
+        }
+        .avatar {
+          color:#858585;
+          margin-left: 10px;
+        }
+      
+      }
+    }
+  }
+}
