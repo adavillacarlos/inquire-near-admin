@@ -22,13 +22,13 @@ const Report = () => {
         return (
           <div className="cellDecision">
              <Link to="/users/test" style={{ textDecoration: "none" }}>
-              <div className="viewButton">Accept</div>
+              <div className="viewButton">View</div>
             </Link>
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
             >
-              Reject
+              Delete
             </div>
           </div>
         );
