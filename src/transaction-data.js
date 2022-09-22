@@ -1,16 +1,20 @@
-export const userColumns = [
+export const transactionColumns = [
     {
-      field: "title",
-      headerName: "Report Title",
-      width: 400,
+      field: "id",
+      headerName: "ID",
+      width: 100,
       renderCell: (params) => {
         return (
           <div className="cellWithImg">
-            <img className="cellImg" src={params.row.img} alt="avatar" />
-            {params.row.title}
+            {params.row.id}
           </div>
         );
       },
+    },
+    {
+      field: "location",
+      headerName: "Location",
+      width: 500,
     },
     {
       field: "date",
@@ -19,7 +23,7 @@ export const userColumns = [
     },
     {
       field: "status",
-      headerName: "Category",
+      headerName: "Status",
       width: 230,
       renderCell: (params) => {
         return (
@@ -32,75 +36,65 @@ export const userColumns = [
   ];
   
   //temporary data
-  export const userRows = [
+  export const transactionRows = [
     {
       id: 1,
-      title: "I got scammed!",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 2,
-      title: "Rating dispute",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 3,
-      title: "Refund! Scam! Not worth!",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 4,
-      title: "I got scammed!",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 5,
-      title: "Rating dispute",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 6,
-      title: "Refund! Scam! Not worth!",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 7,
-      title: "I got scammed!",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 8,
-      title: "Rating dispute",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 9,
-      title: "Refund! Scam! Not worth!",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
     {
       id: 10,
-      title: "I got scammed!",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+      location: "Bureau of Internal Revenue Cebu South Branch",
       date: '2 Apr 2022',
-      status:"active",
+      status:"Completed",
     },
   ];

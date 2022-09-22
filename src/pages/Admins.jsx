@@ -1,8 +1,8 @@
 import "./style.scss";
-import Sidebar from "../components/sidebar/Sidebar";
-import Navbar from "../components/navbar/Navbar";
-import Title from "../components/title/title";
-import Admin from "../components/table/admin";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
+import Title from "../components/title";
+import Admin from "../components/admin";
 
 const Admins = () => {
   return (

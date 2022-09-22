@@ -3,6 +3,7 @@ import Login  from "./pages/login/Login";
 import Users from "./pages/Users";
 import Reports from "./pages/Reports";
 import Admins from "./pages/Admins";
+import Transactions from "./pages/Transactions";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -20,6 +21,10 @@ function App() {
               <Route path="new"
                 element={<New inputs={userInputs} title="Add New User" />}
               /> */}
+            </Route>
+            <Route path="transactions">
+              <Route index element={<Transactions />} />
+              {/* <Route path=":transactionId" element={<Transaction />} /> */}
             </Route>
             <Route path="reports">
               <Route index element={<Reports />} />

@@ -1,4 +1,4 @@
-import "./title.scss";
+import "./style.scss";
 const Title = ({title}) => {
 
     return (

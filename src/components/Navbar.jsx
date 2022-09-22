@@ -1,4 +1,4 @@
-import "./navbar.scss";
+import "./style.scss";
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 const userName = "Cymmer"
 const Navbar = () => {

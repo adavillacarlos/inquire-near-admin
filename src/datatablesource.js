@@ -1,4 +1,4 @@
-export const userColumns = [
+export const reportColumns = [
   {
     field: "title",
     headerName: "Report Title",
@@ -32,7 +32,7 @@ export const userColumns = [
 ];
 
 //temporary data
-export const userRows = [
+export const reportRows = [
   {
     id: 1,
     title: "I got scammed!",

@@ -1,7 +1,8 @@
-import "./sidebar.scss";
+import "./style.scss";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import DashboardRoundedIcon from '@mui/icons-material/DashboardRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import AssignmentIcon from '@mui/icons-material/Assignment';
 import ReportIcon from '@mui/icons-material/Report';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -36,6 +37,13 @@ const Sidebar = () => {
             <li>
               <AccountCircleRoundedIcon className="icon" />
               <span>Users</span>
+            </li>
+          </Link>
+
+          <Link to="/transactions" style={{ textDecoration: "none" }}>
+            <li>
+            <AssignmentIcon className="icon" />
+              <span>Transactions</span>
             </li>
           </Link>
 

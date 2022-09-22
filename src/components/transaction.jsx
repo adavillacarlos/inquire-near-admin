@@ -1,11 +1,11 @@
-import "./table.scss";
+import "./style.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import { userColumns, userRows } from "../../admin-data";
+import { transactionColumns, transactionRows } from "../transaction-data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Admin = () => {
-  const [data, setData] = useState(userRows);
+const Transaction = () => {
+  const [data, setData] = useState(transactionRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -13,12 +13,15 @@ const Admin = () => {
 
   const actionColumn = [
     {
-      field: "action",
-      headerName: "Action",
+      field: "decision",
+      headerName: "Decision",
       width: 200,
       renderCell: (params) => {
         return (
           <div className="cellDecision">
+             <Link to="/users/test" style={{ textDecoration: "none" }}>
+              <div className="viewButton">View</div>
+            </Link>
             <div
               className="deleteButton"
               onClick={() => handleDelete(params.row.id)}
@@ -32,16 +35,10 @@ const Admin = () => {
   ];
   return (
     <div className="datatable">
-      <div className="datatableTitle">
-      Total Admins
-        <Link to="/users/new" className="link">
-          Add New
-        </Link>
-      </div>
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={userColumns.concat(actionColumn)}
+        columns={transactionColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
     
@@ -50,4 +47,5 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default Transaction;
+

@@ -2,17 +2,17 @@ import "./style.scss";
 import Sidebar from "../components/Sidebar";
 import Navbar from "../components/Navbar";
 import Title from "../components/title";
-import Report from "../components/report";
-const Reports = () => {
+import Transaction from "../components/transaction";
+const Transactions = () => {
   return (
     <div className="layout">
       <Sidebar />
       <div className="main">
         <div className="container">
           <Navbar />
-          <Title title="Reports" />
+          <Title title="Transactions" />
           <div className="listContainer">
-            <Report />
+            <Transaction />
           </div>
         </div>
       </div>
@@ -20,4 +20,4 @@ const Reports = () => {
   );
 };
 
-export default Reports;
+export default Transactions;

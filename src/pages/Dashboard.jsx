@@ -1,9 +1,9 @@
 import "./style.scss";
-import Sidebar from "../components/sidebar/Sidebar";
-import Navbar from "../components/navbar/Navbar";
-import Title from "../components/title/title";
-import Widget from "../components/widget/Widget";
-import Chart from "../components/chart/Chart";
+import Sidebar from "../components/Sidebar";
+import Navbar from "../components/Navbar";
+import Title from "../components/title";
+import Widget from "../components/Widget";
+import Chart from "../components/Chart";
 
 const Dashboard = () => {
   return (
