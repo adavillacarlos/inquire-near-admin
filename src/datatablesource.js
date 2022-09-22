@@ -1,33 +1,32 @@
 export const reportColumns = [
   {
+    field: "id",
+    headerName: "ID",
+    width: 150,
+    headerAlign:'center',
+    align: 'center',
+  },
+  {
     field: "title",
     headerName: "Report Title",
-    width: 400,
-    renderCell: (params) => {
-      return (
-        <div className="cellWithImg">
-          <img className="cellImg" src={params.row.img} alt="avatar" />
-          {params.row.title}
-        </div>
-      );
-    },
+    width: 500,
+    headerAlign:'center',
+    align: 'center',
+    
   },
   {
     field: "date",
     headerName: "Date",
-    width: 230,
+    width: 300,
+    headerAlign:'center',
+    align:'center',
   },
   {
     field: "status",
     headerName: "Category",
-    width: 230,
-    renderCell: (params) => {
-      return (
-        <div className={`cellWithCategory${params.row.status}`}>
-          {params.row.status}
-        </div>
-      );
-    },
+    width: 300,
+    headerAlign:'center',
+    align:'center',
   },
 ];
 
@@ -36,71 +35,61 @@ export const reportRows = [
   {
     id: 1,
     title: "I got scammed!",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 2,
-    title: "Rating dispute",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "I got scammed!",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 3,
-    title: "Refund! Scam! Not worth!",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "I got scammed!",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 4,
     title: "I got scammed!",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 5,
-    title: "Rating dispute",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "I got scammed!",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 6,
-    title: "Refund! Scam! Not worth!",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "I got scammed!",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 7,
     title: "I got scammed!",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 8,
-    title: "Rating dispute",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "I got scammed!",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 9,
-    title: "Refund! Scam! Not worth!",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    title: "I got scammed!",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
   {
     id: 10,
     title: "I got scammed!",
-    img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     date: '2 Apr 2022',
-    status:"active",
+    status:"Completed",
   },
 ];

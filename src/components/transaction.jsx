@@ -15,7 +15,9 @@ const Transaction = () => {
     {
       field: "decision",
       headerName: "Decision",
-      width: 200,
+      width: 250,
+      headerAlign:'center',
+      align:'center',
       renderCell: (params) => {
         return (
           <div className="cellDecision">

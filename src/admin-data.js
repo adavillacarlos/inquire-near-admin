@@ -1,8 +1,17 @@
 export const userColumns = [
+  {
+    field: "id",
+    headerName: "ID",
+    width: 150,
+    headerAlign:'center',
+    align: 'center',
+  },
     {
       field: "admin",
       headerName: "Admin",
-      width: 300,
+      width: 500,
+      headerAlign:'center',
+      align: 'center',
       renderCell: (params) => {
         return (
           <div className="cellWithImg">
@@ -19,121 +28,73 @@ export const userColumns = [
   export const userRows = [
     {
       id: 1,
-      name: "Snow",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
      
     },
     {
       id: 2,
-      name: "Jamie Lannister",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     
     },
     {
       id: 3,
-      name: "Lannister",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
    
     },
     {
       id: 4,
-      name: "Stark",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
   
     },
     {
       id: 5,
-      name: "Targaryen",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
      
     },
     {
       id: 6,
-      name: "Melisandre",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     
     },
     {
       id: 7,
-      name: "Clifford",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
    
     },
     {
       id: 8,
-      name: "Frances",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
   
     },
     {
       id: 9,
-      name: "Roxie",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     
     },
     {
       id: 10,
-      name: "Roxie",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     
     },
     {
       id: 11,
-      name: "Snow",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
      
     },
     {
       id: 12,
-      name: "Jamie Lannister",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    
-    },
-    {
-      id: 13,
-      name: "Lannister",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-   
-    },
-    {
-      id: 14,
-      name: "Stark",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  
-    },
-    {
-      id: 15,
-      name: "Targaryen",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-     
-    },
-    {
-      id: 16,
-      name: "Melisandre",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    
-    },
-    {
-      id: 17,
-      name: "Clifford",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-   
-    },
-    {
-      id: 18,
-      name: "Frances",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-  
-    },
-    {
-      id: 19,
-      name: "Roxie",
-      img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    
-    },
-    {
-      id: 20,
-      name: "Roxie",
+      name: "Fleurdelisse H. Rabanes",
       img: "https://images.pexels.com/photos/1820770/pexels-photo-1820770.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     
     },

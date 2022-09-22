@@ -15,7 +15,9 @@ const Report = () => {
     {
       field: "decision",
       headerName: "Decision",
-      width: 200,
+      width: 250,
+      headerAlign:'center',
+      align:'center',
       renderCell: (params) => {
         return (
           <div className="cellDecision">
@@ -41,7 +43,7 @@ const Report = () => {
         columns={reportColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
-    
+        autoHeight={true}
       />
     </div>
   );

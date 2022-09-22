@@ -2,7 +2,9 @@ export const transactionColumns = [
     {
       field: "id",
       headerName: "ID",
-      width: 100,
+      width: 150,
+      headerAlign:'center',
+      align:'center',
       renderCell: (params) => {
         return (
           <div className="cellWithImg">
@@ -15,16 +17,22 @@ export const transactionColumns = [
       field: "location",
       headerName: "Location",
       width: 500,
+      headerAlign:'center',
+      align:'center',
     },
     {
       field: "date",
       headerName: "Date",
-      width: 230,
+      width: 300,
+      headerAlign:'center',
+      align:'center',
     },
     {
       field: "status",
       headerName: "Status",
-      width: 230,
+      width: 300,
+      headerAlign:'center',
+      align:'center',
       renderCell: (params) => {
         return (
           <div className={`cellWithCategory${params.row.status}`}>

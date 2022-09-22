@@ -15,16 +15,15 @@ const Admin = () => {
     {
       field: "action",
       headerName: "Action",
-      width: 200,
+      width: 300,
+      headerAlign:'center',
+      align: 'center',
       renderCell: (params) => {
         return (
           <div className="cellDecision">
-            <div
-              className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
-            >
-              Delete
-            </div>
+            <Link to="/users/test" style={{ textDecoration: "none" }}>
+              <div className="viewButton">View</div>
+            </Link>
           </div>
         );
       },
@@ -35,7 +34,7 @@ const Admin = () => {
       <div className="datatableTitle">
       Total Admins
         <Link to="/users/new" className="link">
-          Add New
+          Add New Admin
         </Link>
       </div>
       <DataGrid
@@ -44,7 +43,7 @@ const Admin = () => {
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
-    
+        autoHeight={true}
       />
     </div>
   );
