@@ -1,11 +1,11 @@
-import "./style.scss";
+import "../style.scss"
 import { DataGrid } from "@mui/x-data-grid";
-import { transactionColumns, transactionRows } from "../transaction-data";
+import { reportColumns, reportRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Transaction = () => {
-  const [data, setData] = useState(transactionRows);
+const Report = () => {
+  const [data, setData] = useState(reportRows);
 
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
@@ -40,14 +40,14 @@ const Transaction = () => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={transactionColumns.concat(actionColumn)}
+        columns={reportColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
-    
+        autoHeight={true}
       />
     </div>
   );
 };
 
-export default Transaction;
+export default Report;
 

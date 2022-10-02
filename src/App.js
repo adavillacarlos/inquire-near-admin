@@ -1,9 +1,10 @@
 import Dashboard from "./pages/Dashboard";
-import Login  from "./pages/login/Login";
+import SignIn from "./pages/SignIn"
 import Users from "./pages/Users";
 import Reports from "./pages/Reports";
 import Admins from "./pages/Admins";
-import Transactions from "./pages/Transactions";
+import Transactions from "./pages/transactions/Transactions";
+import TransactionDetails from "./pages/transactions/TransactionDetails";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={<Dashboard />} />
-            <Route path="login" element={<Login />} />
+            <Route path="signin" element={<SignIn />} />
             <Route path="users">
               <Route index element={<Users />} />
               {/* <Route path=":userId" element={<User />} />
@@ -24,7 +25,7 @@ function App() {
             </Route>
             <Route path="transactions">
               <Route index element={<Transactions />} />
-              {/* <Route path=":transactionId" element={<Transaction />} /> */}
+              <Route path=":transactionId" element={<TransactionDetails />} />
             </Route>
             <Route path="reports">
               <Route index element={<Reports />} />

@@ -1,15 +1,11 @@
-import "./style.scss";
+import "../style.scss"
 import { DataGrid } from "@mui/x-data-grid";
-import { reportColumns, reportRows } from "../datatablesource";
+import { userColumns, userRows } from "../../user-data";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const Report = () => {
-  const [data, setData] = useState(reportRows);
-
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
+const User = () => {
+  const [data, setData] = useState(userRows);
 
   const actionColumn = [
     {
@@ -24,12 +20,6 @@ const Report = () => {
              <Link to="/users/test" style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
-            <div
-              className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
-            >
-              Delete
-            </div>
           </div>
         );
       },
@@ -40,14 +30,15 @@ const Report = () => {
       <DataGrid
         className="datagrid"
         rows={data}
-        columns={reportColumns.concat(actionColumn)}
+        columns={userColumns.concat(actionColumn)}
+        autoHeight={true}
         pageSize={9}
         rowsPerPageOptions={[9]}
-        autoHeight={true}
+    
       />
     </div>
   );
 };
 
-export default Report;
+export default User;
 
