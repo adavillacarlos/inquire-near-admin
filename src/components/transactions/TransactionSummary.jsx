@@ -21,7 +21,7 @@ const TransactionSummary = () => {
       renderCell: (params) => {
         return (
           <div className="cellDecision">
-             <Link to="/transactions/view" style={{ textDecoration: "none" }}>
+             <Link to={`/transactions/${params.row.id}`} style={{ textDecoration: "none" }}>
               <div className="viewButton">View</div>
             </Link>
             <div
