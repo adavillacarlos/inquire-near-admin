@@ -3,8 +3,11 @@ import Sidebar from "../../components/layout/Sidebar";
 import Navbar from "../../components/layout/Navbar";
 import Title from "../../components/layout/Title";
 import TransactionSummary from "../../components/transactions/TransactionSummary";
+import { Connect } from "react-redux";
+import TransactionSummaryController from "../../controllers/transactions/TransactionSummaryController";
 
-const Transactions = () => {
+
+const Transactions = () => { 
   return (
     <div className="layout">
       <Sidebar />
@@ -21,4 +24,5 @@ const Transactions = () => {
   );
 };
 
-export default Transactions;
+
+export default (Transactions);

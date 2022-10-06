@@ -2,8 +2,11 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Inquiries from "./Inquiries";
+import {useParams} from 'react-router-dom';
+
 
 const Transaction = () => {
+  const {transactionId} = useParams(); 
   return (
     <div>
       <Row>
@@ -32,7 +35,7 @@ const Transaction = () => {
               <Col>
                 <p className="text-sm">
                   Transaction Id
-                  <b className="d-block">012345</b>
+                  <b className="d-block">{transactionId}</b>
                 </p>
               </Col>
               <Col>

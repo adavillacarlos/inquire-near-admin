@@ -5,6 +5,7 @@ export const transactionColumns = [
       width: 150,
       headerAlign:'center',
       align:'center',
+      flex:1,
       renderCell: (params) => {
         return (
           <div className="cellWithImg">

@@ -1,18 +1,25 @@
 import { Form, Button } from "react-bootstrap";
-import SignInController from "../../controllers/signin/SignInController";
+import useSignInController from "../../controllers/signin/useSignInController";
 
 const SignInForm = () => {
-  const { email, setEmail, password, setPassword, handleSubmit } =
-    SignInController();
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    error,
+    setError,
+    handleSignIn,
+  } = useSignInController();
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSignIn}>
       <Form.Group className="mb-3">
         <Form.Label>Email</Form.Label>
         <Form.Control
           placeholder="Email"
           type="email"
-          onBlur={(e) => setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
       </Form.Group>
 
@@ -21,14 +28,22 @@ const SignInForm = () => {
         <Form.Control
           type="password"
           placeholder="Password"
-          onBlur={(e) => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
 
-      <Button variant="primary" type="submit">
+      <Button className="mt-3" variant="primary" type="submit">
         Sign In
       </Button>
-      <div className="text-center pt-4 text-muted"></div>
+      {error && (
+        <div className="text-center pt-3">
+          <span>Wrong email or password</span>
+        </div>
+      )}
+
+      <div>
+        Hello
+      </div>
     </Form>
   );
 };
