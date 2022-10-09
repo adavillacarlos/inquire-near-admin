@@ -1,5 +1,6 @@
 import { Form, Button } from "react-bootstrap";
-import useSignInController from "../../controllers/signin/useSignInController";
+import SignInController from "../../controllers/signin/SignInController";
+import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 const SignInForm = () => {
   const {
@@ -10,7 +11,9 @@ const SignInForm = () => {
     error,
     setError,
     handleSignIn,
-  } = useSignInController();
+    handleGoogleSignIn,
+  } = SignInController();
+  const client = process.env.REACT_APP_CLIENT_ID;
 
   return (
     <Form onSubmit={handleSignIn}>
@@ -41,8 +44,13 @@ const SignInForm = () => {
         </div>
       )}
 
-      <div>
-        Hello
+      <div className="justify-content-center" style={{ marginTop: "1rem" }}>
+        <GoogleOAuthProvider clientId={client}>
+          <GoogleLogin
+            onSuccess={handleGoogleSignIn}
+            onFailure={(e) => console.log("Error! ", e)}
+          />
+        </GoogleOAuthProvider>
       </div>
     </Form>
   );

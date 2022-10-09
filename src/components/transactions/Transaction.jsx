@@ -2,11 +2,10 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Inquiries from "./Inquiries";
-import {useParams} from 'react-router-dom';
-
+import { useParams } from "react-router-dom";
 
 const Transaction = () => {
-  const {transactionId} = useParams(); 
+  const { transactionId } = useParams();
   return (
     <div>
       <Row>
@@ -40,18 +39,33 @@ const Transaction = () => {
               </Col>
               <Col>
                 <p className="text-sm">
-                  Status
-                  <b className="d-block">Completed</b>
+                  Status (Is it Completed?)
+                  <b className="d-block">False</b>
                 </p>
               </Col>
             </Row>
             <Row>
               <Col>
                 <p className="text-sm">
-                  Date
+                  PayPal Id
+                  <b className="d-block">{transactionId}</b>
+                </p>
+              </Col>
+              <Col>
+                <p className="text-sm">
+                  Amount
+                  <b className="d-block">800</b>
+                </p>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <p className="text-sm">
+                  Date & Time Started
                   <b className="d-block">April 2, 2022 08:00</b>
                 </p>
               </Col>
+              
               <Col>
                 <p className="text-sm">
                   Location
