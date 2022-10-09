@@ -6,7 +6,7 @@ import {
 import TransactionSummaryController from "../../controllers/transactions/TransactionSummaryController";
 
 const TransactionSummary = () => {
-  const { data, actionColumn, handleDelete } = TransactionSummaryController();
+  const { data, actionColumn } = TransactionSummaryController();
 
   return (
     <div className="datatable">

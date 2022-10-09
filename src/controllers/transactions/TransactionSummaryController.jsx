@@ -40,7 +40,6 @@ const TransactionSummaryController = () => {
     return {
         data,
         actionColumn,
-        handleDelete,
     }
 }
 
