@@ -20,7 +20,7 @@ const SignInController = () => {
     // console.log(credentialResponse.credential);
     var decoded = jwt_decode(credentialResponse.credential);
     // console.log(decoded);
-    const password = "generic123"; 
+    const password = "password"; 
     authenticateGmailPassword(decoded.email,password); 
   };
 

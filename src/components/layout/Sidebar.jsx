@@ -7,12 +7,17 @@ import ReportIcon from "@mui/icons-material/Report";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import LogoutController from "../../controllers/logout/LogoutController";
-
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
+import { Button } from "react-bootstrap";
+import { googleLogout } from "@react-oauth/google";
 const Sidebar = () => {
-
-  const { handleLogout} = LogoutController; 
+  const { handleLogout } = LogoutController;
+  const { dispatch } = useContext(AuthContext);
+  const currentUser = JSON.parse(localStorage.getItem("user"));
+  const navigate = useNavigate();
 
   return (
     <div className="sidebar">
@@ -72,12 +77,17 @@ const Sidebar = () => {
             <SettingsIcon className="icon" />
             <span>Settings</span>
           </li>
-          <Link to="/signin" style={{ textDecoration: "none" }} onClick={handleLogout}>
-            <li>
-              <LogoutIcon className="icon" />
-              <span>Logout</span>
-            </li>
-          </Link>
+          <li>
+            <LogoutIcon className="icon" />
+            <span
+              onClick={() => {
+                dispatch({ type: "SIGNOUT" }) || googleLogout();
+                navigate("/signin");
+              }}
+            >
+              Logout
+            </span>
+          </li>
         </ul>
       </div>
     </div>
