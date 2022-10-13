@@ -8,32 +8,15 @@ import TransactionSummaryModel from "../../models/transaction/TransactionSummary
 // import { fetchData, transactionRows } from "../../models/transaction/TransactionModel";
 const TransactionSummaryController = () => {
   const [data, setData] = useState([]);
+  const { deleteData,fetchData  } = TransactionSummaryModel();
 
-  const handleDelete = async (id) => {
+  const handleDelete = (id) => {
     // deleteData(id);
-    try {
-      await deleteDoc(doc(db, "transaction", id));
-      setData(data.filter((item) => item.id !== id));
-    } catch (err) {
-      console.log(err);
-    }
+    deleteData(id);
   };
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(
-      collection(db, "transaction"),
-      (snapshot) => {
-        let list = [];
-        snapshot.docs.forEach((doc) => {
-          list.push({ id: doc.id, ...doc.data() });
-        });
-        setData(list);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-
+    const unsubscribe = fetchData; 
     return () => {
       unsubscribe();
     };
