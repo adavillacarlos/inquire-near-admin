@@ -37,32 +37,33 @@ export const transactionRows = [
   },
 ];
 
+
 export const transactionColumns = [
   {
     field: "id",
     headerName: "ID",
-    flex: 1,
+    width: 200,
     headerAlign: "center",
     align: "center",
   },
   {
     field: "clientID",
     headerName: "Client Id",
-    width: 100,
+    width: 200,
     headerAlign: "center",
     align: "center",
   },
   {
     field: "inquirerID",
     headerName: "Inquirer Id",
-    width: 100,
+    width: 200,
     headerAlign: "center",
     align: "center",
   },
   {
     field: "isCompleted",
     headerName: "Status",
-    width: 100,
+    width: 200,
     headerAlign: "center",
     align: "center",
   },
@@ -81,7 +82,3 @@ export const transactionColumns = [
     align: "center",
   },
 ];
-
-// const TransactionModel = () => {};
-
-// export default TransactionModel;

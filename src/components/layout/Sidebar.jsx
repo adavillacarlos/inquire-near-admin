@@ -8,18 +8,14 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import { Link, useNavigate } from "react-router-dom";
-import LogoutController from "../../controllers/logout/LogoutController";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
-import { Button } from "react-bootstrap";
 import { googleLogout } from "@react-oauth/google";
 const Sidebar = () => {
-  const { handleLogout } = LogoutController;
   const { dispatch } = useContext(AuthContext);
-  const currentUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
 
-  return (
+   return (
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
@@ -83,6 +79,7 @@ const Sidebar = () => {
               onClick={() => {
                 dispatch({ type: "SIGNOUT" }) || googleLogout();
                 navigate("/signin");
+                window.location.reload(false); 
               }}
             >
               Logout
