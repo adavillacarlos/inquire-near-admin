@@ -1,9 +1,20 @@
 import React from 'react'
-
+import { useState } from 'react'
+import { useEffect } from 'react';
+import DashboardModel from '../../models/dashboard/DashboardModel';
+import TransactionModel from '../../models/transaction/TransactionModel';
 const DashboardController = () => {
-  return (
-    <div>DashboardController</div>
-  )
+  const [summary, setSummary] = useState(0); 
+  const {getSummary} = DashboardModel(setSummary); 
+
+  useEffect(() => {
+    const scores = getSummary(); 
+    return (() => {
+      setSummary(null); 
+    })
+  }, [])
+
+  return {summary, setSummary }
 }
 
 export default DashboardController

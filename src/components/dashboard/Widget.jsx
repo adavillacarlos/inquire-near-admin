@@ -1,26 +1,28 @@
-import "../style.scss"
+import "../style.scss";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-
+import DashboardController from "../../controllers/dashboard/DashboardController";
+import DashboardModel from "../../models/dashboard/DashboardModel";
+import { useEffect } from "react";
 const Widget = ({ type }) => {
+  const { summary, setSummary } = DashboardController();
   let data;
-
   //temporary
-  const diff = 20;
+  const countUser = summary.usersData;
 
   switch (type) {
     case "user":
       data = {
         title: "USERS",
-        count: "32,182",
+        count: countUser,
         link: "See all users",
         icon: (
           <PersonOutlinedIcon
             className="icon"
             style={{
-             backgroundColor: "rgba(	253, 188, 100)",
+              backgroundColor: "rgba(	253, 188, 100)",
               color: "rgba(228,114,0)",
             }}
           />
@@ -33,10 +35,9 @@ const Widget = ({ type }) => {
         count: 132,
         link: "View all reports",
         icon: (
-          <ShoppingCartOutlinedIcon className="icon" 
-             style={{color: "crimson",
-             backgroundColor: "rgba(249, 137, 107)",
-            }}
+          <ShoppingCartOutlinedIcon
+            className="icon"
+            style={{ color: "crimson", backgroundColor: "rgba(249, 137, 107)" }}
           />
         ),
       };
@@ -65,13 +66,7 @@ const Widget = ({ type }) => {
         <span className="counter">{data.count}</span>
         <span className="link">{data.link}</span>
       </div>
-      <div className="right">
-        <div className="percentage positive">
-          <KeyboardArrowUpIcon />
-          {diff} %
-        </div>
-        {data.icon}
-      </div>
+     
     </div>
   );
 };

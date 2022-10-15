@@ -17,6 +17,7 @@ const TransactionSummaryModel = (data, setData) => {
     }
   );
 
+
   const deleteData = async (id) => {
     try {
       await deleteDoc(doc(db, "transaction", id));
@@ -76,13 +77,13 @@ export default TransactionSummaryModel;
 export const transactionColumns = [
   {
     field: "id",
-    headerName: "ID",
+    headerName: "Transaction Id",
     width: 200,
     headerAlign: "center",
     align: "center",
   },
   {
-    field: "ClientID",
+    field: "clientID",
     headerName: "Client Id",
     width: 200,
     headerAlign: "center",
@@ -109,11 +110,5 @@ export const transactionColumns = [
     headerAlign: "center",
     align: "center",
   },
-  {
-    field: "store",
-    headerName: "Store",
-    width: 500,
-    headerAlign: "center",
-    align: "center",
-  },
+  
 ];

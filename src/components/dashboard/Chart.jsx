@@ -1,4 +1,4 @@
-import "../style.scss"
+import "../style.scss";
 import {
   AreaChart,
   Area,
@@ -7,6 +7,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+
 
 const data = [
   { name: "Jan", Total: 12 },
@@ -20,7 +21,7 @@ const data = [
   { name: "Sep", Total: 8 },
   { name: "Oct", Total: 16 },
   { name: "Nov", Total: 9 },
-  { name: "Dec", Total: 6},
+  { name: "Dec", Total: 6 },
 ];
 
 const Chart = ({ aspect, title }) => {
@@ -28,9 +29,7 @@ const Chart = ({ aspect, title }) => {
     <div className="chart">
       <div className="title">{title}</div>
       <ResponsiveContainer width="100%" aspect={aspect}>
-        <AreaChart
-          data={data}
-        >
+        <AreaChart data={data}>
           <defs>
             <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#007AFF" stopOpacity={0.8} />

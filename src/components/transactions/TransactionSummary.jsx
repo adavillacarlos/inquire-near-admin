@@ -1,8 +1,6 @@
 import "../style.scss";
 import { DataGrid } from "@mui/x-data-grid";
-import {
-  transactionColumns,
-} from "../../models/transaction/TransactionModel";
+import { transactionColumns } from "../../models/transaction/TransactionSummaryModel";
 import TransactionSummaryController from "../../controllers/transactions/TransactionSummaryController";
 
 const TransactionSummary = () => {

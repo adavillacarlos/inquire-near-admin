@@ -8,7 +8,7 @@ import TransactionSummaryModel from "../../models/transaction/TransactionSummary
 // import { fetchData, transactionRows } from "../../models/transaction/TransactionModel";
 const TransactionSummaryController = () => {
   const [data, setData] = useState([]);
-  const { deleteData,fetchData  } = TransactionSummaryModel();
+  const { deleteData, fetchData } = TransactionSummaryModel(data, setData);
 
   const handleDelete = (id) => {
     // deleteData(id);
@@ -16,8 +16,9 @@ const TransactionSummaryController = () => {
   };
 
   useEffect(() => {
-    const unsubscribe = fetchData; 
+    const unsubscribe = fetchData;
     return () => {
+      setData([]);
       unsubscribe();
     };
   }, []);
