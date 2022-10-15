@@ -17,7 +17,6 @@ const Transaction = () => {
     TransactionController(transactionId);
 
   const { getTransactionData } = TransactionModel(setTransactionData);
-  console.log(transactionData.inquirerList);
 
   return (
     <div>
