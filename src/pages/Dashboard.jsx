@@ -3,8 +3,10 @@ import Navbar from "../components/layout/Navbar";
 import Title from "../components/layout/Title";
 import Widget from "../components/dashboard/Widget";
 import Chart from "../components/dashboard/Chart";
-
+import DashboardController from "../controllers/dashboard/DashboardController";
 const Dashboard = () => {
+  const { summary, setSummary, } = DashboardController();
+
   return (
     <div className="layout">
       <Sidebar />
@@ -17,12 +19,12 @@ const Dashboard = () => {
           </div>
           <div className="wrapper">
             <div className="widgets">
-              <Widget type="user" />
+              <Widget type="user" summary={summary} />
               <Widget type="report" />
               <Widget type="admin" />
             </div>
             <div className="char">
-              <Chart title="APP USAGE" aspect={3 / 1} />
+              <Chart title="APP USAGE" aspect={3 / 1} summary={summary}/>
             </div>
           </div>
         </div>

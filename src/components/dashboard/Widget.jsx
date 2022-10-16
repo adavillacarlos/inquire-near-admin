@@ -6,12 +6,11 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import DashboardController from "../../controllers/dashboard/DashboardController";
 import DashboardModel from "../../models/dashboard/DashboardModel";
 import { useEffect } from "react";
-const Widget = ({ type }) => {
-  const { summary, setSummary } = DashboardController();
+const Widget = ({ type, summary }) => {
   let data;
   //temporary
-  const countUser = summary.usersData;
-
+  const countUser = `${summary ? summary.usersData : ""} `; 
+  // console.log(`${summary ? summary.usersData : ""} `);
   switch (type) {
     case "user":
       data = {
@@ -66,7 +65,6 @@ const Widget = ({ type }) => {
         <span className="counter">{data.count}</span>
         <span className="link">{data.link}</span>
       </div>
-     
     </div>
   );
 };

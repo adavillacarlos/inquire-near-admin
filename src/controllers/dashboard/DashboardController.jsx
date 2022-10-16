@@ -4,8 +4,9 @@ import { useEffect } from 'react';
 import DashboardModel from '../../models/dashboard/DashboardModel';
 import TransactionModel from '../../models/transaction/TransactionModel';
 const DashboardController = () => {
-  const [summary, setSummary] = useState(0); 
-  const {getSummary} = DashboardModel(setSummary); 
+  const [summary, setSummary] = useState({}); 
+  const {getSummary} = DashboardModel(setSummary);
+
 
   useEffect(() => {
     const scores = getSummary(); 

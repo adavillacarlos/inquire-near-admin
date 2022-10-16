@@ -8,7 +8,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-
 const data = [
   { name: "Jan", Total: 12 },
   { name: "Feb", Total: 5 },
@@ -24,12 +23,13 @@ const data = [
   { name: "Dec", Total: 6 },
 ];
 
-const Chart = ({ aspect, title }) => {
+const Chart = ({ aspect, title, summary }) => {
+console.log(summary); 
   return (
     <div className="chart">
       <div className="title">{title}</div>
       <ResponsiveContainer width="100%" aspect={aspect}>
-        <AreaChart data={data}>
+        <AreaChart data={summary.data}>
           <defs>
             <linearGradient id="total" x1="0" y1="0" x2="0" y2="1">
               <stop offset="5%" stopColor="#007AFF" stopOpacity={0.8} />
