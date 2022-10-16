@@ -24,7 +24,6 @@ const data = [
 ];
 
 const Chart = ({ aspect, title, summary }) => {
-console.log(summary); 
   return (
     <div className="chart">
       <div className="title">{title}</div>

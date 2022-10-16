@@ -43,7 +43,6 @@ const DashboardModel = (setSummary) => {
     const novData = await getDocs(novQuery);
     const decData = await getDocs(decQuery);
 
-    console.log(octData.docs.length);
 
     const months = [
       "Jan",

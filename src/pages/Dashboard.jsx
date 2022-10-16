@@ -21,7 +21,7 @@ const Dashboard = () => {
             <div className="widgets">
               <Widget type="user" summary={summary} />
               <Widget type="report" />
-              <Widget type="admin" />
+              <Widget type="transaction" summary={summary}/>
             </div>
             <div className="char">
               <Chart title="APP USAGE" aspect={3 / 1} summary={summary}/>

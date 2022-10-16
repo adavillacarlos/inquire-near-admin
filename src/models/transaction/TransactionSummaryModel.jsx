@@ -98,7 +98,7 @@ export const transactionColumns = [
   },
   {
     field: "isCompleted",
-    headerName: "Status",
+    headerName: "Completed",
     width: 200,
     headerAlign: "center",
     align: "center",

@@ -10,7 +10,8 @@ const Widget = ({ type, summary }) => {
   let data;
   //temporary
   const countUser = `${summary ? summary.usersData : ""} `; 
-  // console.log(`${summary ? summary.usersData : ""} `);
+  const countTransactions = `${summary ? summary.transactionsData : ""} `; 
+
   switch (type) {
     case "user":
       data = {
@@ -41,11 +42,11 @@ const Widget = ({ type, summary }) => {
         ),
       };
       break;
-    case "admin":
+    case "transaction":
       data = {
-        title: "ADMINS",
-        count: 23,
-        link: "View all admins",
+        title: "TRANSACTIONS",
+        count: countTransactions,
+        link: "View all transactions",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
