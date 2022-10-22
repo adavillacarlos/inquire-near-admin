@@ -26,7 +26,6 @@ const TransactionController = (transactionId) => {
     return () => {
       setTransactionData([]);
       setInquirerData([]);
-      
     };
   }, []);
 
@@ -34,6 +33,7 @@ const TransactionController = (transactionId) => {
   const handleAnswerUrl = (row) => {
     setModalTitle("Proof Image"); 
     setShow(true); 
+    //TO DO: to change to answer_image once it is saved
     getImage(row.inquiryListID, row.id,"inquiry_image"); 
 
   };

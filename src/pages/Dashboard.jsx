@@ -17,7 +17,7 @@ const Dashboard = () => {
           <div>
             <h2>Summary</h2>
           </div>
-          {summary === undefined || summary === null ? (
+          {summary === undefined || summary === null || summary.length === 0 ? (
             <div></div>
           ) : (
             <div className="wrapper">

@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 const Widget = ({ type, summary }) => {
   let data;
   //temporary
-  const countUser = `${summary ? summary.usersData : ""} `;
-  const countTransactions = `${summary ? summary.transactionsData : ""} `;
+  const countUser = `${summary ? summary.usersData : 0} `;
+  const countTransactions = `${summary ? summary.transactionsData : 0} `;
 
   switch (type) {
     case "user":
