@@ -5,7 +5,7 @@ import Widget from "../components/dashboard/Widget";
 import Chart from "../components/dashboard/Chart";
 import DashboardController from "../controllers/dashboard/DashboardController";
 const Dashboard = () => {
-  const { summary, setSummary, } = DashboardController();
+  const { summary, setSummary } = DashboardController();
 
   return (
     <div className="layout">
@@ -17,16 +17,20 @@ const Dashboard = () => {
           <div>
             <h2>Summary</h2>
           </div>
-          <div className="wrapper">
-            <div className="widgets">
-              <Widget type="user" summary={summary} />
-              <Widget type="report" />
-              <Widget type="transaction" summary={summary}/>
+          {summary === undefined || summary === null ? (
+            <div></div>
+          ) : (
+            <div className="wrapper">
+              <div className="widgets">
+                <Widget type="user" summary={summary} />
+                <Widget type="report" summary={summary} />
+                <Widget type="transaction" summary={summary} />
+              </div>
+              <div className="char">
+                <Chart title="APP USAGE" aspect={3 / 1} summary={summary} />
+              </div>
             </div>
-            <div className="char">
-              <Chart title="APP USAGE" aspect={3 / 1} summary={summary}/>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

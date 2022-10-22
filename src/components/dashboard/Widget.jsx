@@ -33,7 +33,7 @@ const Widget = ({ type, summary }) => {
     case "report":
       data = {
         title: "NEW REPORTS",
-        count: 132,
+        count: countUser,
         link: "View all reports",
         icon: (
           <ShoppingCartOutlinedIcon

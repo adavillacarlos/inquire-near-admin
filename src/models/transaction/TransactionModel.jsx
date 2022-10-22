@@ -62,13 +62,13 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
     setImage([]);
     const storage = getStorage();
     const pathReference = ref(storage, 'gs://inquire-near-2022.appspot.com/' + inquiryListID + '/' + inquiryId + '_' + kindImage);
-    console.log('gs://inquire-near-2022.appspot.com/' + inquiryListID + '/' + inquiryId + '_' + kindImage + '.jpeg'); 
+    // console.log('gs://inquire-near-2022.appspot.com/' + inquiryListID + '/' + inquiryId + '_' + kindImage + '.jpeg'); 
     // Get the download URL
     getDownloadURL(pathReference)
       .then((url) => {
         // Insert url into an <img> tag to "download"
         setImage(url); 
-        console.log(url); 
+        // console.log(url); 
       })
       .catch((error) => {
         // A full list of error codes is available at
