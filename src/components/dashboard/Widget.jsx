@@ -12,6 +12,7 @@ const Widget = ({ type, summary }) => {
   //temporary
   const countUser = `${summary ? summary.usersData : 0} `;
   const countTransactions = `${summary ? summary.transactionsData : 0} `;
+  const countReports = `${summary ? summary.reportsData : 0} `;
 
   switch (type) {
     case "user":
@@ -33,7 +34,7 @@ const Widget = ({ type, summary }) => {
     case "report":
       data = {
         title: "NEW REPORTS",
-        count: countUser,
+        count: countReports,
         link: "View all reports",
         icon: (
           <ShoppingCartOutlinedIcon

@@ -5,7 +5,7 @@ const DashboardModel = (setSummary) => {
   const getSummary = async () => {
     const users = await getDocs(collection(db, "users"));
     const transactions = await getDocs(collection(db, "transaction"));
-    // const reports = await getDocs(collection(db, "reports"));
+    const reports = await getDocs(collection(db, "reports"));
 
     const year = new Date().getFullYear();
     const sept = new Date(new Date(year, 8, 1, 1, 1, 0, 0));
@@ -111,6 +111,7 @@ const DashboardModel = (setSummary) => {
     setSummary({
       usersData: users.docs.length,
       transactionsData: transactions.docs.length,
+      reportsData: reports.docs.length,
       data: [
         {name:"Sept", Total:septData.docs.length}, 
         {name:"Oct", Total:octData.docs.length}, 
