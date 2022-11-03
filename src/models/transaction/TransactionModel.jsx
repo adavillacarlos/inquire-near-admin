@@ -15,13 +15,13 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
     try {
       let list = [];
 
-      const docRef = doc(db, "transaction", transactionId);
-      const docSnap = await getDoc(docRef);
+      const transactionRef = doc(db, "transaction", transactionId);
+      const transactionSnap = await getDoc(transactionRef);
       // console.log(docSnap.data().clientID);
-      const clientRef = doc(db, "users", docSnap.data().clientID);
+      const clientRef = doc(db, "users", transactionSnap.data().clientID);
       const clientSnap = await getDoc(clientRef);
 
-      const inquirerRef = doc(db, "users", docSnap.data().inquirerID);
+      const inquirerRef = doc(db, "users", transactionSnap.data().inquirerID);
       const inquirerSnap = await getDoc(inquirerRef);
 
       // const inquirerListRef = doc(
@@ -33,19 +33,19 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
 
       const inquiryListQuery = query(
         collection(db, "inquiry"),
-        where("inquiryListID", "==", docSnap.data().inquiryListID)
+        where("inquiryListID", "==", transactionSnap.data().inquiryListID)
       );
       const inquiryListData = await getDocs(inquiryListQuery);
       inquiryListData.forEach((doc) => {
         list.push({ id: doc.id, ...doc.data() });
       });
 
-      if (docSnap.exists()) {
+      if (transactionSnap.exists()) {
         setTransactionData({
-          id: docSnap.id,
+          id: transactionSnap.id,
           client: clientSnap.data(),
           inquirer: inquirerSnap.data(),
-          ...docSnap.data(),
+          ...transactionSnap.data(),
         });
         setInquiryData(list);
       } else {
