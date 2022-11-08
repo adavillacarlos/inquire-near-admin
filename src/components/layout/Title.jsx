@@ -1,4 +1,4 @@
-import "../style.scss";
+import "./layout.scss";
 const Title = ({ title }) => {
   return (
     <div className="title-bar">

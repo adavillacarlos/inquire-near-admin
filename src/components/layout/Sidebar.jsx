@@ -1,4 +1,4 @@
-import "../style.scss";
+import "./layout.scss";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";

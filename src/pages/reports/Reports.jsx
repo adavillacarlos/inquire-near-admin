@@ -1,8 +1,8 @@
-import "./style.scss";
-import Sidebar from "../components/layout/Sidebar";
-import Navbar from "../components/layout/Navbar";
-import Title from "../components/layout/Title";
-import Report from "../components/reports/Report";
+import "./reports.scss";
+import Sidebar from "../../components/layout/Sidebar";
+import Navbar from "../../components/layout/Navbar";
+import Title from "../../components/layout/Title";
+import Report from "../../components/reports/Report";
 const Reports = () => {
   return (
     <div className="layout">

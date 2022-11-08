@@ -1,14 +1,13 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import TransactionSummaryModel from "../../models/transaction/TransactionSummaryModel";
-// import { fetchData, transactionRows } from "../../models/transaction/TransactionModel";
-const TransactionSummaryController = () => {
+import AdminSummaryModel from "../../models/admin/AdminSummaryModel";
+
+  const AdminSummaryController = () => {
   const [data, setData] = useState([]);
-  const { deleteData, fetchData } = TransactionSummaryModel(data, setData);
+  const { deleteData, fetchData } = AdminSummaryModel(data, setData);
 
   const handleDelete = (id) => {
-    // deleteData(id);
     deleteData(id);
   };
 
@@ -23,7 +22,7 @@ const TransactionSummaryController = () => {
   const actionColumn = [
     {
       field: "decision",
-      headerName: "Decision",
+      headerName: "Action",
       width: 250,
       headerAlign: "center",
       align: "center",
@@ -31,7 +30,7 @@ const TransactionSummaryController = () => {
         return (
           <div className="cellDecision">
             <Link
-              to={`/transactions/${params.row.id}`}
+              to={`/admins/${params.row.id}`}
               style={{ textDecoration: "none" }}
             >
               <div className="viewButton">View</div>
@@ -47,11 +46,10 @@ const TransactionSummaryController = () => {
       },
     },
   ];
-
   return {
     data,
     actionColumn,
   };
 };
 
-export default TransactionSummaryController;
+export default AdminSummaryController;

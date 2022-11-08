@@ -1,25 +1,24 @@
+import "./user.scss";
 import React from "react";
 import Sidebar from "../../components/layout/Sidebar";
 import Navbar from "../../components/layout/Navbar";
-import Title from "../../components/layout/Title";
-import Transaction from "../../components/transactions/Transaction";
-
-
-const TransactionDetails = () => {
+import UserTitle from "../../components/layout/UserTitle";
+import User from "../../components/users/UserView";
+                                    
+const UserDetails = () => {
   return (
     <div className="layout">
       <Sidebar />
       <div className="main">
         <div className="container">
           <Navbar />
-          <Title title="Transaction" />
-          <div className="listContainer">
-            <Transaction />
+          <UserTitle title="User" />
+          <div className="viewContainer">
+             <User /> 
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-export default TransactionDetails;
+export default UserDetails;

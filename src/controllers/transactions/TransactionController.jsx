@@ -1,10 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import TransactionModel from "../../models/transaction/TransactionModel";
-import { Button } from "react-bootstrap";
 const TransactionController = (transactionId) => {
   const [transactionData, setTransactionData] = useState([]);
-  const [clientData, setClientData] = useState([]);
   const [inquirerData, setInquirerData] = useState([]);
   const [inquiryData, setInquiryData] = useState([]);
   const [modalTitle, setModalTitle] = useState(""); 
@@ -34,7 +32,7 @@ const TransactionController = (transactionId) => {
     setModalTitle("Proof Image"); 
     setShow(true); 
     //TO DO: to change to answer_image once it is saved
-    getImage(row.inquiryListID, row.id,"inquiry_image"); 
+    getImage(row.inquiryListID, row.id,"answer_image");
 
   };
 
@@ -101,16 +99,11 @@ const TransactionController = (transactionId) => {
   return {
     image, 
     show,
-    modalTitle, 
-    handleAnswerUrl,
-    handleImageUrl, 
+    modalTitle,
     handleClose,
     transactionData,
     actionColumn,
     inquiryData,
-    setTransactionData,
-    setInquirerData,
-    setClientData,
   };
 };
 

@@ -1,8 +1,8 @@
-import "./style.scss";
-import Sidebar from "../components/layout/Sidebar";
-import Navbar from "../components/layout/Navbar";
-import Title from "../components/layout/Title";
-import Admin from "../components/admins/Admin";
+import "./adminSummary.scss";
+import Sidebar from "../../components/layout/Sidebar";
+import Navbar from "../../components/layout/Navbar";
+import Title from "../../components/layout/Title";
+import Datatable from "../../components/admin/AdminSummary";
 
 const Admins = () => {
   return (
@@ -13,7 +13,7 @@ const Admins = () => {
           <Navbar />
           <Title title="Admins" />
           <div className="listContainer">
-            <Admin />
+            <Datatable />
           </div>
         </div>
       </div>

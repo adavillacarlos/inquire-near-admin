@@ -1,0 +1,29 @@
+.layout {
+    display: flex;
+  
+    .main{
+      margin-left: 200px;
+      position: relative;
+      width: 100%;
+      
+    .container {
+      flex: 6;
+  
+    .wrapper{
+      margin-left: 20px;
+      
+    }
+  
+      .listContainer {
+        padding: 20px;
+        margin: 20px;
+  
+        .listTitle {
+          font-size: 20px;
+          font-weight: 700;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  }

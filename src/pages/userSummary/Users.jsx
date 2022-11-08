@@ -1,19 +1,19 @@
-import "./transactions.scss";
+import "./userSummary.scss";
 import Sidebar from "../../components/layout/Sidebar";
 import Navbar from "../../components/layout/Navbar";
 import Title from "../../components/layout/Title";
-import TransactionSummary from "../../components/transactions/TransactionSummary";
+import UserSummary from "../../components/users/UserSummary";
 
-const Transactions = () => { 
+const UserList = () => {
   return (
     <div className="layout">
       <Sidebar />
       <div className="main">
         <div className="container">
           <Navbar />
-          <Title title="Transactions" />
+          <Title title="Users" />
           <div className="listContainer">
-            <TransactionSummary />
+            <UserSummary />
           </div>
         </div>
       </div>
@@ -21,5 +21,4 @@ const Transactions = () => {
   );
 };
 
-
-export default (Transactions);
+export default UserList;

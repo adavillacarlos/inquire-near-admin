@@ -1,4 +1,4 @@
-import "../style.scss";
+import "./layout.scss";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
@@ -7,18 +7,13 @@ const Navbar = () => {
   const {currentUser} = useContext(AuthContext); 
 
   return (
-    <div className="navbar">
-      <div className="wrapper">
-        <div className="items">
-          <div className="item">
-            <p className="userName">Welcome, {currentUser.email}</p>
-          </div>
-          <div className="item">
-            <AccountCircleRoundedIcon className="avatar" />
-          </div>
-        </div>
-      </div>
-    </div>
+   <div class="topnav">
+   <div class="topnav-right">
+     <p>Welcome, {currentUser.email}</p>
+     <AccountCircleRoundedIcon class="avatar"/>
+   </div>
+ </div>
+
   );
 };
 

@@ -1,0 +1,21 @@
+.signin{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    form{
+      display: flex;
+      flex-direction: column;
+  
+      input{
+        width: 300px;
+      }
+  
+      span{
+        color: red;
+      }
+  
+    }
+  
+  }

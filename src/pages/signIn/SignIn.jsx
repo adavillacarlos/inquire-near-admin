@@ -1,5 +1,5 @@
-import "./style.scss";
-import SignInForm from "../components/auth/SignInForm";
+import "./signIn.scss";
+import SignInForm from "../../components/auth/SignInForm";
 
 const SignIn = () => {
   return (

@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
-import Inquiries from "./Inquiries";
+//import Inquiries from "./Inquiries";
 import { useParams } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
 import TransactionModel, {
@@ -10,7 +10,7 @@ import TransactionModel, {
   inquiryColumns,
 } from "../../models/transaction/TransactionModel";
 import TransactionController from "../../controllers/transactions/TransactionController";
-import { useEffect } from "react";
+
 
 const Transaction = () => {
   const { transactionId } = useParams();
@@ -18,28 +18,26 @@ const Transaction = () => {
     image, 
     show,
     modalTitle,
-    handleAnswerUrl,
-    handleImageUrl,
     handleClose,
     transactionData,
     actionColumn,
     inquiryData,
-    setTransactionData,
   } = TransactionController(transactionId);
 
   const inquiryList = inquiryData ? inquiryData : inquiryRows;
   // const inquiryList = transactionData.inquiryListData.inquiryList ? transactionData.inquiryListData.inquiryList.map((value, index) => ({id: index, ...value})) : [];
-  // console.log(transactionData ? transactionData.inquiryListData : "");
+
 
   return (
-    <div>
+    <div >
       {transactionData.length === 0 ? (
         <div></div>
       ) : (
         <div>
-          <Row>
+          <Row >
             <Col>
-              <div className="text-muted">
+              <div style={{ display: 'block',
+                  width: 700, padding: 30 }}>
                 <Row>
                   <Col>
                     <p className="text-sm">
@@ -138,8 +136,8 @@ const Transaction = () => {
                       Location
                       <b className="d-block">
                         {`${
-                          transactionData.inquirerList
-                            ? transactionData.inquirerList.store
+                            transactionData
+                            ? transactionData.store
                             : ""
                         } `}
                       </b>
@@ -151,7 +149,8 @@ const Transaction = () => {
           </Row>
           <Row className="mt-5">
             <Col className="">
-              <div className="datatable" style={{ height: "400px" }}>
+        
+              <div className="datatable" style={{ height: 400 }}>
                 <DataGrid
                   rows={inquiryList}
                   // rows={transactionData ? transactionData.inquiryListData : inquiryRows}

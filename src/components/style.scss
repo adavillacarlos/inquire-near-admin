@@ -1,4 +1,88 @@
 
+.star-icon{
+  color: #FBBC05;
+  float:inline-start;
+}
+//admin
+.datatable {
+  height: 600px;
+  padding: 0px 20px 20px 20px;
+  
+  .datatableTitle{
+    width: 100%;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .link{
+      text-decoration: none;
+      color: green;
+      font-size: 16px;
+      font-weight: 400;
+      border: 1px solid green;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+
+  .cellWithImg {
+    display: flex;
+    align-items: center;
+
+    .cellImg {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+  }
+
+  .cellWithStatus {
+    padding: 5px;
+    border-radius: 5px;
+
+    &.active {
+      background-color: rgba(0, 128, 0, 0.05);
+      color: green;
+    }
+    &.pending {
+      background-color: rgba(255, 217, 0, 0.05);
+      color: goldenrod;
+    }
+    &.passive {
+      background-color: rgba(255, 0, 0, 0.05);
+      color: crimson;
+    }
+  }
+
+  .cellAction {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .viewButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: darkblue;
+      border: 1px dotted rgba(0, 0, 139, 0.596);
+      cursor: pointer;
+    }
+    
+    .deleteButton {
+      padding: 2px 5px;
+      border-radius: 5px;
+      color: crimson;
+      border: 1px dotted rgba(220, 20, 60, 0.6);
+      cursor: pointer;
+    }
+  }
+}
+
 //chart css
 .chart {
     flex: 12;
@@ -99,169 +183,7 @@
       }
     }
   }
-  //navbar css
-  .navbar {
-    border-bottom: 0.5px solid #DADADA;
-    width: 100%;
-    overflow: auto;
-  
-    .wrapper {
-      
-      .items {
-        padding: 30px;
-        display: flex;
-        float: right;
-  
-        .item {
-  
-          .userName{
-            font-size: 20px;
-            font-weight: bold;
-            color: #000000;
-          }
-          .avatar {
-            color:#858585;
-            margin-left: 10px;
-          }
-        
-        }
-      }
-    }
-  }
-  //sidebar css
-  .sidebar {
-    display:block;
-    position: fixed;
-    align-items: center;
-    border-right: 0.5px solid #DADADA;
-    height: 100%;
-    width: 236px;
-    background-color: #007AFF;
-    padding: 5vh 3vh;
-    z-index: 1; 
-    top: 0; 
-    left: 0;
-    overflow-x: hidden;
-  
-    .top {
-      height: 50px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  
-      .logo {
-        font-size: 24px;
-        font-weight: bold;
-        color: #FFFFFF;
-       
-      }
-    }
-  
-    .search {
-      margin-top: 10px;
-      margin-bottom: 20px;
-      width: 236px;
-      display: flex;
-      align-items: center;
-      background-color: #FFFFFF;
-      border-radius: 10px;
-  
-      input {
-        border: none;
-        outline: none;
-        background: transparent;
-  
-        &::placeholder {
-          color: #C3C3C3;
-          font-size: 15px;
-        }
-      }
-      .icon{
-        color: #B4B4B4;
-        font-size: 18px;
-        margin: 10px;
-      }
-    }
-  
-    .center {
-      align-items: center;
-      justify-content: center;
-  
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-  
-        .title {
-          font-size: 10px;
-          font-weight: bold;
-          color: #999;
-          margin-top: 15px;
-          margin-bottom: 5px;
-        }
-  
-        li {
-          display: flex;
-          align-items: center;
-          padding: 10px 0px;
-          cursor: pointer;
-  
-          &:hover {
-            font-weight: bold;
-          }
-  
-          .icon {
-            font-size: 30px;
-            color: #FFFFFF;
-          }
-  
-          span{
-              font-size: 18px;
-              font-weight: thin;
-              color: #FFFFFF;
-              margin-left: 10px;
-          }
-        
-        }
-      
-      }
-    }
-  
-  
-    .bottom {
-      ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-  
-        li {
-          display: flex;
-          align-items: center;
-          padding: 10px 0px;
-          cursor: pointer;
-  
-          &:hover {
-            font-weight: bold;
-          }
-  
-          .icon {
-            font-size: 30px;
-            color: #FFFFFF;
-          }
-  
-          span{
-              font-size: 18px;
-              font-weight: light;
-              color: #FFFFFF;
-              margin-left: 10px;
-          }
-        
-        }
-      
-      }
-    }
-  
-  }
+ 
 //table css
 
 .cellWrapper{
@@ -365,18 +287,7 @@
       }
     }
   }
-  //title css
-  .title-bar{
-    border-bottom: 0.5px solid #DADADA;
-    width: 100%;
-    overflow: auto;
 
-    .title{
-        padding: 30px 40px;
-        font-size: 32px;
-        font-weight: bold;
-    }
-}
 
 //widget css
 .widget {
@@ -387,7 +298,7 @@
     -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
     box-shadow: 2px 4px 10px 1px rgba(201, 201, 201, 0.47);
     border-radius: 10px;
-    height: 100px;
+    height: 150px;
     background-color: #007AFF;
   
     .left,
@@ -435,5 +346,7 @@
         align-self: flex-end;
       }
     }
+
+  
   }
   

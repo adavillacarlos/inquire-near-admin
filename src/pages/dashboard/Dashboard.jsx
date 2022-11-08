@@ -1,11 +1,12 @@
-import Sidebar from "../components/layout/Sidebar";
-import Navbar from "../components/layout/Navbar";
-import Title from "../components/layout/Title";
-import Widget from "../components/dashboard/Widget";
-import Chart from "../components/dashboard/Chart";
-import DashboardController from "../controllers/dashboard/DashboardController";
+import "./dashboard.scss";
+import Sidebar from "../../components/layout/Sidebar";
+import Navbar from "../../components/layout/Navbar";
+import Title from "../../components/layout/Title";
+import Widget from "../../components/dashboard/Widget";
+import Chart from "../../components/dashboard/Chart";
+import DashboardController from "../../controllers/dashboard/DashboardController";
 const Dashboard = () => {
-  const { summary, setSummary } = DashboardController();
+  const { summary } = DashboardController();
 
   return (
     <div className="layout">
@@ -14,9 +15,7 @@ const Dashboard = () => {
         <div className="container">
           <Navbar />
           <Title title="Dashboard" />
-          <div>
-            <h2>Summary</h2>
-          </div>
+         
           {summary === undefined || summary === null || summary.length === 0 ? (
             <div></div>
           ) : (
@@ -27,7 +26,7 @@ const Dashboard = () => {
                 <Widget type="transaction" summary={summary} />
               </div>
               <div className="char">
-                <Chart title="APP USAGE" aspect={3 / 1} summary={summary} />
+                <Chart title="APP USAGE" aspect={4 / 1} summary={summary} />
               </div>
             </div>
           )}

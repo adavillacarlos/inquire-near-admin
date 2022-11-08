@@ -1,8 +1,12 @@
-import Dashboard from "./pages/Dashboard";
-import SignIn from "./pages/SignIn";
-import Users from "./pages/Users";
-import Reports from "./pages/Reports";
-import Admins from "./pages/Admins";
+import Dashboard from "./pages/dashboard/Dashboard";
+import SignIn from "./pages/signIn/SignIn";
+import UserList from "./pages/userSummary/Users";
+import UserDetails from "./pages/userView/User";
+import Admins from "./pages/adminSummary/adminSummary";
+import Single from "./pages/adminView/Single";
+import New from "./pages/adminNew/New";
+import Reports from "./pages/reports/Reports";
+import {adminInputs } from "./formSource";
 import Transactions from "./pages/transactions/Transactions";
 import TransactionDetails from "./pages/transactions/TransactionDetails";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
@@ -34,14 +38,18 @@ function App() {
                 index
                 element={
                   <RequireAuth>
-                    <Users />
+                    <UserList />
                   </RequireAuth>
                 }
               />
-              {/* <Route path=":userId" element={<User />} />
-              <Route path="new"
-                element={<New inputs={userInputs} title="Add New User" />}
-              /> */}
+                 <Route
+                path=":userId"
+                element={
+                  <RequireAuth>
+                    <UserDetails />
+                  </RequireAuth>
+                }
+              />
             </Route>
             <Route path="transactions">
               <Route
@@ -72,6 +80,7 @@ function App() {
               />
               {/* <Route path=":reportId" element={<Report />} /> */}
             </Route>
+
             <Route path="admins">
               <Route
                 index
@@ -81,11 +90,24 @@ function App() {
                   </RequireAuth>
                 }
               />
-              {/* <Route path=":reportId" element={<Admin />} />
-              <Route path="new"
-                element={<New inputs={adminInputs} title="Add New Admin" />}
-              /> */}
+              <Route
+                path=":adminId"
+                element={
+                  <RequireAuth>
+                    <Single />
+                  </RequireAuth>
+                }
+              />
+              <Route
+                path="new"
+                element={
+                  <RequireAuth>
+                    <New inputs={adminInputs} title="Add New Admin" />
+                  </RequireAuth>
+                }
+              />
             </Route>
+
           </Route>
         </Routes>
       </BrowserRouter>

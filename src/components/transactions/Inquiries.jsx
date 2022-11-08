@@ -1,4 +1,4 @@
-import Table from 'react-bootstrap/Table';
+//import Table from 'react-bootstrap/Table';
 import { DataGrid } from '@mui/x-data-grid';
 
 const Inquiries = () => {

@@ -99,14 +99,14 @@ export const transactionColumns = [
   {
     field: "isCompleted",
     headerName: "Completed",
-    width: 200,
+    width: 150,
     headerAlign: "center",
     align: "center",
   },
   {
     field: "amount",
     headerName: "Amount",
-    width: 200,
+    width: 150,
     headerAlign: "center",
     align: "center",
   },
