@@ -10,7 +10,7 @@ import TransactionModel, {
   inquiryColumns,
 } from "../../models/transaction/TransactionModel";
 import TransactionController from "../../controllers/transactions/TransactionController";
-
+import { useEffect } from "react";
 
 const Transaction = () => {
   const { transactionId } = useParams();
@@ -18,15 +18,18 @@ const Transaction = () => {
     image, 
     show,
     modalTitle,
+    handleAnswerUrl,
+    handleImageUrl,
     handleClose,
     transactionData,
     actionColumn,
     inquiryData,
+    setTransactionData,
   } = TransactionController(transactionId);
 
   const inquiryList = inquiryData ? inquiryData : inquiryRows;
   // const inquiryList = transactionData.inquiryListData.inquiryList ? transactionData.inquiryListData.inquiryList.map((value, index) => ({id: index, ...value})) : [];
-
+  // console.log(transactionData ? transactionData.inquiryListData : "");
 
   return (
     <div >
@@ -136,8 +139,8 @@ const Transaction = () => {
                       Location
                       <b className="d-block">
                         {`${
-                            transactionData
-                            ? transactionData.store
+                          transactionData.inquirerList
+                            ? transactionData.inquirerList.store
                             : ""
                         } `}
                       </b>
