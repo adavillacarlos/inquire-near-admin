@@ -32,12 +32,8 @@ const TransactionController = (transactionId) => {
     setModalTitle("Proof Image"); 
     setShow(true); 
     //TO DO: to change to answer_image once it is saved
-<<<<<<< HEAD
-    getImage(row.inquiryListID, row.id,"answer_image");
-=======
-    getImage(row.inquiryListID, row.id,"answer_image"); 
->>>>>>> b1fa4e0162543c549033d9f2b21958da1fe3d409
 
+    getImage(row.inquiryListID, row.id,"answer_image"); 
   };
 
   //Image URL - client 
