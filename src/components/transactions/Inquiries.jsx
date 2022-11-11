@@ -8,7 +8,7 @@ const Inquiries = () => {
   return (
     <DataGrid
     className="datagrid"
-   
+
     pageSize={9}
     rowsPerPageOptions={[9]}
 

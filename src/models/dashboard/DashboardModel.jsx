@@ -4,7 +4,7 @@ import { collection, query, where, getDoc, getDocs } from "firebase/firestore";
 const DashboardModel = (setSummary) => {
   const getSummary = async () => {
     const users = await getDocs(collection(db, "users"));
-    const transactions = await getDocs(collection(db, "transaction"));
+    const transactions = await getDocs(collection(db, "transactions"));
     const reports = await getDocs(collection(db, "reports"));
 
     const year = new Date().getFullYear();
@@ -15,25 +15,25 @@ const DashboardModel = (setSummary) => {
     const jan = new Date(new Date(year + 1, 0, 1, 1, 1, 0, 0));
 
     const septQuery = query(
-      collection(db, "transaction"),
+      collection(db, "transactions"),
       where("dateTimeEnded", "<", oct),
       where("dateTimeEnded", ">=", sept)
     );
 
     const octQuery = query(
-      collection(db, "transaction"),
+      collection(db, "transactions"),
       where("dateTimeEnded", "<", nov),
       where("dateTimeEnded", ">=", oct)
     );
 
     const novQuery = query(
-      collection(db, "transaction"),
+      collection(db, "transactions"),
       where("dateTimeEnded", "<", dec),
       where("dateTimeEnded", ">=", nov)
     );
 
     const decQuery = query(
-      collection(db, "transaction"),
+      collection(db, "transactions"),
       where("dateTimeEnded", "<", jan),
       where("dateTimeEnded", ">=", dec)
     );

@@ -4,7 +4,7 @@ import { db } from "../../app/firebase";
 const TransactionSummaryModel = (data, setData) => {
   //LISTEN  (realtime)
   const fetchData = onSnapshot(
-    collection(db, "transaction"),
+    collection(db, "transactions"),
     (snapshot) => {
       let list = [];
       snapshot.docs.forEach((doc) => {
@@ -20,7 +20,7 @@ const TransactionSummaryModel = (data, setData) => {
 
   const deleteData = async (id) => {
     try {
-      await deleteDoc(doc(db, "transaction", id));
+      await deleteDoc(doc(db, "transactions", id));
       setData(data.filter((item) => item.id !== id));
     } catch (err) {
       console.log(err);
@@ -83,14 +83,14 @@ export const transactionColumns = [
     align: "center",
   },
   {
-    field: "clientID",
+    field: "clientId",
     headerName: "Client Id",
     width: 200,
     headerAlign: "center",
     align: "center",
   },
   {
-    field: "inquirerID",
+    field: "inquirerId",
     headerName: "Inquirer Id",
     width: 200,
     headerAlign: "center",

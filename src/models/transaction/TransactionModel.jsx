@@ -12,48 +12,41 @@ import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { db } from "../../app/firebase";
 const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
   const getTransactionData = async (transactionId) => {
-    try {
-      let list = [];
-
-      const transactionRef = doc(db, "transaction", transactionId);
+    try{
+      let list = []; 
+      const transactionRef = doc(db, "transactions", transactionId);
       const transactionSnap = await getDoc(transactionRef);
-      // console.log(docSnap.data().clientID);
-      const clientRef = doc(db, "users", transactionSnap.data().clientID);
-      const clientSnap = await getDoc(clientRef);
+      if(transactionSnap.exists()){
+        
+        const clientRef = doc(db, "users", transactionSnap.data().clientId);
+        const clientSnap = await getDoc(clientRef);
+        
+        const inquirerRef = doc(db, "users", transactionSnap.data().inquirerId);
+        const inquirerSnap = await getDoc(inquirerRef);
 
-      const inquirerRef = doc(db, "users", transactionSnap.data().inquirerID);
-      const inquirerSnap = await getDoc(inquirerRef);
+        const inquiryListQuery = query(
+          collection(db, "inquiries"),
+          where("inquiryListId", "==", transactionSnap.data().inquiryListId)
+        );
 
-      // const inquirerListRef = doc(
-      //   db,
-      //   "inquirylist",
-      //   docSnap.data().inquiryListID
-      // );
-      // const inquirerListSnap = await getDoc(inquirerListRef);
-
-      const inquiryListQuery = query(
-        collection(db, "inquiry"),
-        where("inquiryListID", "==", transactionSnap.data().inquiryListID)
-      );
-      const inquiryListData = await getDocs(inquiryListQuery);
-      inquiryListData.forEach((doc) => {
-        list.push({ id: doc.id, ...doc.data() });
-      });
-
-      if (transactionSnap.exists()) {
-        setTransactionData({
-          id: transactionSnap.id,
-          client: clientSnap.data(),
-          inquirer: inquirerSnap.data(),
-          ...transactionSnap.data(),
+        const inquiryListData = await getDocs(inquiryListQuery);
+        inquiryListData.forEach((doc) => {
+          list.push({ id: doc.id, ...doc.data() });
+          console.log(doc.id); 
         });
+
+        setTransactionData({
+          id: transactionId, 
+          client: clientSnap.data(), 
+          inquirer: inquirerSnap.data(), 
+          ...transactionSnap.data(), 
+        }); 
         setInquiryData(list);
-      } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
+
       }
-    } catch (error) {
-      console.log(error);
+
+    } catch {
+
     }
   };
 

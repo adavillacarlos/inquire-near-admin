@@ -8,15 +8,18 @@ const TransactionSummaryController = () => {
   const { deleteData, fetchData } = TransactionSummaryModel(data, setData);
 
   const handleDelete = (id) => {
+    console.log(id); 
     // deleteData(id);
     deleteData(id);
   };
 
   useEffect(() => {
     const unsubscribe = fetchData;
+    const undelete = deleteData; 
     return () => {
       setData([]);
       unsubscribe();
+      undelete(); 
     };
   }, []);
 

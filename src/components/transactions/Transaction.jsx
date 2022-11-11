@@ -5,12 +5,11 @@ import Modal from "react-bootstrap/Modal";
 //import Inquiries from "./Inquiries";
 import { useParams } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
-import TransactionModel, {
+import {
   inquiryRows,
   inquiryColumns,
 } from "../../models/transaction/TransactionModel";
 import TransactionController from "../../controllers/transactions/TransactionController";
-import { useEffect } from "react";
 
 const Transaction = () => {
   const { transactionId } = useParams();
@@ -18,19 +17,17 @@ const Transaction = () => {
     image, 
     show,
     modalTitle,
-    handleAnswerUrl,
-    handleImageUrl,
     handleClose,
     transactionData,
     actionColumn,
     inquiryData,
-    setTransactionData,
   } = TransactionController(transactionId);
 
   const inquiryList = inquiryData ? inquiryData : inquiryRows;
   // const inquiryList = transactionData.inquiryListData.inquiryList ? transactionData.inquiryListData.inquiryList.map((value, index) => ({id: index, ...value})) : [];
   // console.log(transactionData ? transactionData.inquiryListData : "");
 
+  console.log(transactionData); 
   return (
     <div >
       {transactionData.length === 0 ? (
@@ -39,8 +36,7 @@ const Transaction = () => {
         <div>
           <Row >
             <Col>
-              <div style={{ display: 'block',
-                  width: 700, padding: 30 }}>
+              <div style={{ display: 'block', padding: 30 }}>
                 <Row>
                   <Col>
                     <p className="text-sm">
@@ -54,7 +50,7 @@ const Transaction = () => {
                             : ""
                         } `}
                       </b>
-                      <b className="d-block">{transactionData.clientID}</b>
+                      <b className="d-block">{transactionData.clientId}</b>
                     </p>
                   </Col>
                   <Col>
@@ -69,7 +65,7 @@ const Transaction = () => {
                             : ""
                         } `}
                       </b>
-                      <b className="d-block">{transactionData.inquirerID}</b>
+                      <b className="d-block">{transactionData.inquirerId}</b>
                     </p>
                   </Col>
                 </Row>
@@ -93,7 +89,7 @@ const Transaction = () => {
                   <Col>
                     <p className="text-sm">
                       PayPal Id
-                      <b className="d-block">{transactionData.payPalID}</b>
+                      <b className="d-block">{transactionData.payPalId}</b>
                     </p>
                   </Col>
                   <Col>
@@ -109,9 +105,9 @@ const Transaction = () => {
                       Date & Time Started
                       <b className="d-block">
                         {`${
-                          transactionData.dateTimeStarted
+                          transactionData.dateTimeCreated
                             ? new Date(
-                                transactionData.dateTimeStarted.seconds * 1000
+                                transactionData.dateTimeCreated.seconds * 1000
                               ).toLocaleString()
                             : ""
                         }`}
@@ -139,8 +135,8 @@ const Transaction = () => {
                       Location
                       <b className="d-block">
                         {`${
-                          transactionData.inquirerList
-                            ? transactionData.inquirerList.store
+                          transactionData.store
+                            ? transactionData.store
                             : ""
                         } `}
                       </b>

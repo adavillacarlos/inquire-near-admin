@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import TransactionModel from "../../models/transaction/TransactionModel";
 const TransactionController = (transactionId) => {
   const [transactionData, setTransactionData] = useState([]);
-  const [inquirerData, setInquirerData] = useState([]);
   const [inquiryData, setInquiryData] = useState([]);
   const [modalTitle, setModalTitle] = useState(""); 
   const [image, setImage] = useState([]); 
@@ -17,13 +16,11 @@ const TransactionController = (transactionId) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   useEffect(() => {
     const unsubscribe = getTransactionData(transactionId);
     return () => {
       setTransactionData([]);
-      setInquirerData([]);
     };
   }, []);
 
