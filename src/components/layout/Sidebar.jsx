@@ -24,11 +24,6 @@ const Sidebar = () => {
       </div>
 
       <div className="center">
-        <div className="search">
-          <SearchOutlinedIcon className="icon" />
-          <input type="text" placeholder="Search" />
-        </div>
-
         <ul>
           <Link to="/" style={{ textDecoration: "none" }}>
             <li>

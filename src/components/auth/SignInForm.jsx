@@ -45,12 +45,15 @@ const SignInForm = () => {
       )}
 
       <div className="justify-content-center" style={{ marginTop: "1rem" }}>
-        <GoogleOAuthProvider clientId={client}>
-          <GoogleLogin
-            onSuccess={handleGoogleSignIn}
-            onFailure={(e) => console.log("Error! ", e)}
-          />
-        </GoogleOAuthProvider>
+        <hr></hr>
+        <div className="text-align-center">
+          <GoogleOAuthProvider clientId={client}>
+            <GoogleLogin
+              onSuccess={handleGoogleSignIn}
+              onFailure={(e) => console.log("Error! ", e)}
+            />
+          </GoogleOAuthProvider>
+        </div>
       </div>
     </Form>
   );

@@ -5,7 +5,6 @@ import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 
 const Navbar = () => {
   const {currentUser} = useContext(AuthContext); 
-
   return (
    <div class="topnav">
    <div class="topnav-right">
