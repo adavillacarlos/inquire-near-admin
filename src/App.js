@@ -6,6 +6,7 @@ import Admins from "./pages/adminSummary/adminSummary";
 import Single from "./pages/adminView/Single";
 import New from "./pages/adminNew/New";
 import Reports from "./pages/reports/Reports";
+import ReportDetails from "./pages/reports/ReportDetails";
 import {adminInputs } from "./formSource";
 import Transactions from "./pages/transactions/Transactions";
 import TransactionDetails from "./pages/transactions/TransactionDetails";
@@ -78,7 +79,14 @@ function App() {
                   </RequireAuth>
                 }
               />
-              {/* <Route path=":reportId" element={<Report />} /> */}
+             <Route
+                path=":reportId"
+                element={
+                  <RequireAuth>
+                    <ReportDetails />
+                  </RequireAuth>
+                }
+              />
             </Route>
 
             <Route path="admins">

@@ -1,53 +1,132 @@
-import "../style.scss"
-import { DataGrid } from "@mui/x-data-grid";
-import { reportColumns, reportRows } from "../../datatablesource";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+//import StarRateIcon from '@mui/icons-material/StarRate';
+import { useParams } from "react-router-dom";
+import ReportController from "../../controllers/reports/ReportController";
 
 const Report = () => {
-  const [data, setData] = useState(reportRows);
+  const { reportId } = useParams();
+  const { reportData } = ReportController(reportId);
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
-  };
-
-  const actionColumn = [
-    {
-      field: "decision",
-      headerName: "Decision",
-      width: 250,
-      headerAlign:'center',
-      align:'center',
-      renderCell: (params) => {
-        return (
-          <div className="cellDecision">
-             <Link to="/users/test" style={{ textDecoration: "none" }}>
-              <div className="viewButton">View</div>
-            </Link>
-            <div
-              className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
-            >
-              Delete
-            </div>
-          </div>
-        );
-      },
-    },
-  ];
   return (
-    <div className="datatable">
-      <DataGrid
-        className="datagrid"
-        rows={data}
-        columns={reportColumns.concat(actionColumn)}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
-        autoHeight={true}
-      />
+    <div >
+      {reportData.length === 0 ? (
+        <div></div>
+      ) : (
+        <div>
+          <Row>
+            <Col>
+              <div className="text-muted">
+              <Row>
+                  <Col>
+                    <p className="text-sm">
+                      Client
+                      <b className="d-block">
+                        {`${
+                          reportData.client
+                            ? reportData.client.firstName +
+                              " " +
+                              reportData.client.lastName
+                            : ""
+                        } `}
+                      </b>
+                      <b className="d-block">{reportData.clientID}</b>
+                    </p>
+                  </Col>
+                  <Col>
+                    <p className="text-sm">
+                      Inquirer
+                      <b className="d-block">
+                        {`${
+                          reportData.inquirer
+                            ? reportData.inquirer.firstName +
+                              " " +
+                              reportData.inquirer.lastName
+                            : ""
+                        } `}
+                      </b>
+                      <b className="d-block">{reportData.inquirerId}</b>
+                    </p>
+                  </Col>
+                </Row>
+
+                <Row>
+                <Col>
+                    <p className="text-sm">
+                      Report Id
+                      <b className="d-block">{reportId}</b>
+                    </p>
+                  </Col>
+                  <Col>
+                    <p className="text-sm">
+                      Transaction Id
+                      <b className="d-block">{reportData.transactionID}</b>
+                    </p>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p className="text-sm">
+                      <b>Date Created</b>
+                      <p className="d-block">
+                        {`${
+                          reportData.dateTimeCreated? new Date(reportData.dateTimeCreated.seconds * 1000).toLocaleString() : ""
+                        }`}
+                      </p>
+                    </p>
+                  </Col>
+
+                  <Col>
+                    <p className="text-sm">
+                      <b>Date Resolved</b>
+                      <p className="d-block">
+                        {`${
+                          reportData.dateResolved? new Date(reportData.dateResolved.seconds * 1000).toLocaleString() : ""
+                        }`}
+                      </p>
+                    </p>
+                  </Col>
+                </Row>
+
+                <Row>
+                <Col>
+                    <p className="text-sm">
+                      <b>Category</b>
+                      <p className="d-block">{reportData.category}
+                      </p>
+                    </p>
+                  </Col>
+
+                  <Col>
+                    <p className="text-sm">
+                      <b>Status</b>
+                      <p className="d-block">{"" + reportData.isCompleted}</p>
+                    </p>
+                  </Col>
+                </Row>
+
+                <Row>
+                  <Col>
+                    <p className="text-sm">
+                      <b>Title</b>
+                      <p className="d-block">{reportData.title}</p>
+                    </p>
+                  </Col>
+                  </Row>
+
+                <Row>
+                <p className="text-sm">
+                      <b>Reason</b>
+                      <p className="d-block">{reportData.description}</p>
+                    </p>
+                </Row>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      )}
     </div>
   );
 };
 
 export default Report;
-
