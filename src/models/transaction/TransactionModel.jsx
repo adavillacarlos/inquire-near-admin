@@ -32,7 +32,6 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
         const inquiryListData = await getDocs(inquiryListQuery);
         inquiryListData.forEach((doc) => {
           list.push({ id: doc.id, ...doc.data() });
-          console.log(doc.id); 
         });
 
         setTransactionData({
@@ -50,11 +49,11 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
     }
   };
 
-  const getImage = (inquiryListID, inquiryId,kindImage) => {
+  const getImage = (inquiryListId, inquiryId,kindImage) => {
     // Create a reference to the file we want to download
     setImage([]);
     const storage = getStorage();
-    const pathReference = ref(storage, 'gs://inquire-near-2022.appspot.com/' + inquiryListID + '/' + inquiryId + '_' + kindImage);
+    const pathReference = ref(storage, 'gs://inquire-near-2022.appspot.com/' + inquiryListId + '/' + inquiryId + '_' + kindImage);
     // console.log('gs://inquire-near-2022.appspot.com/' + inquiryListID + '/' + inquiryId + '_' + kindImage + '.jpeg'); 
     // Get the download URL
     getDownloadURL(pathReference)

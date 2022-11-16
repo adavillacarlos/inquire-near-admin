@@ -27,7 +27,6 @@ const Transaction = () => {
   // const inquiryList = transactionData.inquiryListData.inquiryList ? transactionData.inquiryListData.inquiryList.map((value, index) => ({id: index, ...value})) : [];
   // console.log(transactionData ? transactionData.inquiryListData : "");
 
-  console.log(transactionData); 
   return (
     <div >
       {transactionData.length === 0 ? (
