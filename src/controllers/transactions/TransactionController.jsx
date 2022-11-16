@@ -29,15 +29,14 @@ const TransactionController = (transactionId) => {
     setModalTitle("Proof Image"); 
     setShow(true); 
     //TO DO: to change to answer_image once it is saved
-
-    getImage(row.inquiryListID, row.id,"answer_image"); 
+    getImage(row.inquiryListId, row.id,"answer_image"); 
   };
 
   //Image URL - client 
   const handleImageUrl = (row) => {
     setModalTitle("Client Image"); 
     setShow(true); 
-    getImage(row.inquiryListID, row.id,"inquiry_image"); 
+    getImage(row.inquiryListId, row.id,"inquiry_image"); 
     // console.log("Client");
     // https://firebasestorage.googleapis.com/v0/b/inquire-near-2022.appspot.com/o/client_id%2Finquiry_id_inquiry_image?alt=media&token=bbe2aa9d-a0c9-408e-807d-bb9c5bbe7eff
   };
