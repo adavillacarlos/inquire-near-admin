@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
    <div class="topnav">
    <div class="topnav-right">
-     <p>Welcome, {currentUser.email}</p>
+     <p>Welcome, {currentUser ? currentUser.email : ""} </p>
      <AccountCircleRoundedIcon class="avatar"/>
    </div>
  </div>

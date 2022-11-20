@@ -28,7 +28,7 @@ const Transaction = () => {
   // console.log(transactionData ? transactionData.inquiryListData : "");
 
   return (
-    <div >
+    <div data-testid="transactiondetails">
       {transactionData.length === 0 ? (
         <div></div>
       ) : (

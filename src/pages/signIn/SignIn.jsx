@@ -3,7 +3,7 @@ import SignInForm from "../../components/auth/SignInForm";
 
 const SignIn = () => {
   return (
-    <div className="signin">
+    <div className="signin" data-testid="signin-form">
       <div className="panel border p-3 shadow-sm p-3 mb-5 bg-white rounded" style={{borderRadius:"1rem"}}>
         <div className="panel-heading mt-3">
            <h3 className="text-center"><b>Sign In</b></h3>

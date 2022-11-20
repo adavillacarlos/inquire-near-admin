@@ -7,7 +7,7 @@ const TransactionSummary = () => {
   const { data, actionColumn } = TransactionSummaryController();
 
   return (
-    <div className="datatable">
+    <div className="datatable" data-testid="transactionsummary">
       <DataGrid
         className="datagrid"
         rows={data}

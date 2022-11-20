@@ -36,7 +36,7 @@ const SignInForm = () => {
         Sign In
       </Button>
       {error && (
-        <div className="text-center pt-3">
+        <div data-testid="login-error" className="text-center pt-3">
           <span>Wrong email or password</span>
         </div>
       )}

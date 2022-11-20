@@ -12,7 +12,7 @@ import Transactions from "./pages/transactions/Transactions";
 import TransactionDetails from "./pages/transactions/TransactionDetails";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {AuthContext} from "./context/AuthContext"; 
-import { useContext } from "react";
+import { Suspense, useContext } from "react";
 
 function App() {
   const {currentUser} = useContext(AuthContext);
