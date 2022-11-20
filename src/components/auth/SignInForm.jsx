@@ -4,12 +4,9 @@ import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
 
 const SignInForm = () => {
   const {
-    email,
     setEmail,
-    password,
     setPassword,
     error,
-    setError,
     handleSignIn,
     handleGoogleSignIn,
   } = SignInController();

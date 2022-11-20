@@ -25,12 +25,9 @@ const SignInController = () => {
   };
 
   return {
-    email,
     setEmail,
-    password,
     setPassword,
     error,
-    setError,
     handleSignIn,
     handleGoogleSignIn,
   };

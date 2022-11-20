@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useEffect } from 'react';
 import DashboardModel from '../../models/dashboard/DashboardModel';
-import TransactionModel from '../../models/transaction/TransactionModel';
 const DashboardController = () => {
   const [summary, setSummary] = useState({}); 
   const {getSummary} = DashboardModel(setSummary);
