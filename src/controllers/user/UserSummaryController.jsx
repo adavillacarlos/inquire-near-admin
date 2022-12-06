@@ -5,17 +5,17 @@ import UserSummaryModel from "../../models/user/UserSummaryModel";
  
 const UserSummaryController = () => {
   const [data, setData] = useState([]);
-  const {  fetchData } = UserSummaryModel(data, setData);
+  const {deleteData,fetchData } = UserSummaryModel(data, setData);
 
-  // const handleDelete = (id) => {
-  //   deleteData(id);
-  // };
+  const handleDelete = (id) => {
+    deleteData(id);
+  };
 
   useEffect(() => {
     const unsubscribe = fetchData;
-    return () => {
-      setData([]);
-      unsubscribe();
+      return () => {
+        setData([]);
+        unsubscribe();
     };
   }, []);
 
@@ -35,12 +35,12 @@ const UserSummaryController = () => {
             >
               <div className="viewButton">View</div>
             </Link>
-          {/* <div
+          <div
             className="deleteButton"
             onClick={() => handleDelete(params.row.id)}
           >
             Delete
-          </div> */}
+          </div>
           </div>
         );
       },

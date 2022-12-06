@@ -1,65 +1,61 @@
 import "./new.scss";
 import Sidebar from "../../components/layout/Sidebar";
 import Navbar from "../../components/layout/Navbar";
-import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
+//import DriveFolderUploadOutlinedIcon from "@mui/icons-material/DriveFolderUploadOutlined";
 import Title from "../../components/layout/Title";
-import { useEffect, useState } from "react";
-import {
-  doc,
-  serverTimestamp,
-  setDoc,
-} from "firebase/firestore";
-import { auth, db, storage } from "../../app/firebase";
+import { useState } from "react";
+import {doc,serverTimestamp,setDoc} from "firebase/firestore";
+import { auth, db } from "../../app/firebase";//delete storage
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+//import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom";
 
-const New = ({ inputs, title }) => {
-  const [file, setFile] = useState("");
+const New = ({ inputs }) => { // delete ',title'
+  //const [file, setFile] = useState("");
   const [data, setData] = useState({});
-  const [per, setPerc] = useState(null);
+  //const [per, setPerc] = useState(null);
   const navigate = useNavigate()
 
-  useEffect(() => {
-    const uploadFile = () => {
-      const name = new Date().getTime() + file.name;
+  //useEffect(() => {
+  //   const uploadFile = () => {
+  //     const name = new Date().getTime() + file.name;
 
-      console.log(name);
-      const storageRef = ref(storage, file.name);
-      const uploadTask = uploadBytesResumable(storageRef, file);
+  //     console.log(name);
+  //     const storageRef = ref(storage, file.name);
+  //     const uploadTask = uploadBytesResumable(storageRef, file);
 
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log("Upload is " + progress + "% done");
-          setPerc(progress);
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-            default:
-              break;
-          }
-        },
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-            setData((prev) => ({ ...prev, img: downloadURL }));
-          });
-        }
-      );
-    };
-    file && uploadFile();
-  }, [file]);
+  //     uploadTask.on(
+  //       "state_changed",
+  //       (snapshot) => {
+  //         const progress =
+  //           (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  //         console.log("Upload is " + progress + "% done");
+  //         setPerc(progress);
+  //         switch (snapshot.state) {
+  //           case "paused":
+  //             console.log("Upload is paused");
+  //             break;
+  //           case "running":
+  //             console.log("Upload is running");
+  //             break;
+  //           default:
+  //             break;
+  //         }
+  //       },
+  //       (error) => {
+  //         console.log(error);
+  //       },
+  //       () => {
+  //         getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+  //           setData((prev) => ({ ...prev, img: downloadURL }));
+  //         });
+  //       }
+  //     );
+  //   };
+  //   file && uploadFile();
+  // }, [file]);
 
-  console.log(data);
+ 
 
   const handleInput = (e) => {
     const id = e.target.id;
@@ -67,6 +63,8 @@ const New = ({ inputs, title }) => {
 
     setData({ ...data, [id]: value });
   };
+
+  console.log(data);
 
   const handleAdd = async (e) => {
     e.preventDefault();
@@ -76,7 +74,7 @@ const New = ({ inputs, title }) => {
         data.email,
         data.password
       );
-      await setDoc(doc(db, "admins", res.admin.uid), {
+      await setDoc(doc(db, "admins", res.user.uid), {
         ...data,
         timeStamp: serverTimestamp(),
       });
@@ -94,7 +92,7 @@ const New = ({ inputs, title }) => {
         <Navbar />
         <Title title="Add New Admin" />
         <div className="bottom">
-          <div className="left">
+          {/* <div className="left">
             <img
               src={
                 file
@@ -103,7 +101,7 @@ const New = ({ inputs, title }) => {
               }
               alt=""
             />
-          </div>
+          </div> */}
           <div className="right">
             <form onSubmit={handleAdd}>
             {inputs.map((input) => (
@@ -112,13 +110,12 @@ const New = ({ inputs, title }) => {
                   <input
                     id={input.id}
                     type={input.type}
-                    placeholder={input.placeholder}
                     onChange={handleInput}
                   />
                 </div>
               ))}
               <div className="formInput">
-                <label htmlFor="file">
+                {/* <label htmlFor="file">
                   Upload Image: <DriveFolderUploadOutlinedIcon className="icon" />
                 </label>
                 <input
@@ -126,11 +123,11 @@ const New = ({ inputs, title }) => {
                   id="file"
                   onChange={(e) => setFile(e.target.files[0])}
                   style={{ display: "none" }}
-                />
+                /> */}
               </div>
 
               
-              <button disabled={per !== null && per < 100} type="submit">
+              <button type="submit">
                 Send
               </button>
             </form>

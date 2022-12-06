@@ -1,8 +1,8 @@
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import StarRateIcon from '@mui/icons-material/StarRate';
 import { useParams } from "react-router-dom";
 import UserController from "../../controllers/user/UserController";
+
 
 const User = () => {
   const { userId } = useParams();
@@ -36,48 +36,10 @@ const User = () => {
                   <Col>
                   <p className="text-sm">
                       <b>User Id</b>
-                      <p className="d-block">{userData.uid}</p>
+                      <p className="d-block">{userData.id}</p>
                     </p>
                   </Col>
                 </Row>
-
-                <Row>
-                  <Col>
-                    <p className="text-sm">
-                      <b>No. of Transaction as a Client</b>
-                      <p className="d-block">{userData.transactionAsClient}</p>
-                    </p>
-                  </Col>
-                  <Col>
-                    <p className="text-sm">
-                    <b>No. of Transaction as an Inquiree</b>
-                      <p className="d-block">{userData.transactionAsInquiree}</p>
-                    </p>
-                  </Col>
-                </Row>
-
-                <Row>
-                  <Col>
-                    <p className="text-sm">
-                      <b>Date & Time Joined</b>
-                      <p className="d-block">
-                        {`${
-                          userData.dateJoined? new Date(userData.dateJoined.seconds * 1000).toLocaleString() : ""
-                        }`}
-                      </p>
-                    </p>
-                  </Col>
-
-                  <Col>
-                    <p className="text-sm">
-                      <b>Average Rating</b>
-                      <p className="d-block">{userData.aveRating}
-                      <StarRateIcon  sx={{color:'gold', height: 18}}/>
-                      </p>
-                    </p>
-                  </Col>
-                </Row>
-
                 <Row>
                   <Col>
                     <p className="text-sm">
@@ -87,12 +49,41 @@ const User = () => {
                   </Col>
                   <Col>
                     <p className="text-sm">
-                      <b>Password</b>
-                      <p className="d-block">{"**********"}</p>
+                      <b>Role</b>
+                      <p className="d-block">{userData.role}</p>
                     </p>
                   </Col>
                 </Row>
-
+                <Row>
+                  <Col>
+                    <p className="text-sm">
+                      <b>Paypal Address</b>
+                      <p className="d-block">{userData.paypalAddress}</p>
+                    </p>
+                  </Col>
+                  
+                  <Col>
+                    <p className="text-sm">
+                      <b className="d-block">
+                        Status (Is User Active?)
+                      </b>                     
+                        {"" + userData.isActive}
+                    </p>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col>
+                    <p className="text-sm">
+                      <b>Date & Time Joined</b>
+                      <p className="d-block">
+                        {`${
+                          userData.dateTimeCreated? new Date(userData.dateTimeCreated.seconds * 1000).toLocaleString() : ""
+                        }`}
+                      </p>
+                    </p>
+                  </Col>
+                  
+                </Row>
               </div>
             </Col>
           </Row>

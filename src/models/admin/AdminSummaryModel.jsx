@@ -16,11 +16,9 @@ const AdminSummaryModel = (data, setData) => {
       console.log(error);
     }
   );
-
-
   const deleteData = async (id) => {
-    try {
-      await deleteDoc(doc(db, "admins", id));
+   try {
+      await deleteDoc(doc(db, "users", id));
       setData(data.filter((item) => item.id !== id));
     } catch (err) {
       console.log(err);
@@ -38,7 +36,7 @@ export default AdminSummaryModel;
 
 export const adminColumns = [
   {
-    field: "uid",
+    field: "id",
     headerName: "Admin Id",
     width: 250,
     headerAlign: "center",
@@ -52,9 +50,9 @@ export const adminColumns = [
     align: "center",
   },
   {
-    field: "username",
-    headerName: "User Name",
-    width: 300,
+    field: "firstName",
+    headerName: "Name",
+    width: 250,
     headerAlign: "center",
     align: "center"
     

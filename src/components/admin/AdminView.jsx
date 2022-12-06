@@ -35,32 +35,12 @@ return (
                   </p>
                 </Col>
                 <Col>
-                <p className="text-sm">
-                    <b>User Name</b>
-                    <p className="d-block">{adminData.username}</p>
-                  </p>
-                </Col>
-              </Row>
-
-              <Row>
-                <Col>
                   <p className="text-sm">
                     <b>Admin Id</b>
-                    <p className="d-block">{adminData.uid}</p>
-                  </p>
-                </Col>
-                <Col>
-                  <p className="text-sm">
-                  <b>Date & Time Joined</b>
-                  <p className="d-block">
-                      {`${
-                        adminData.dateJoined? new Date(adminData.dateJoined.seconds * 1000).toLocaleString() : ""
-                      }`}
-                    </p>
+                    <p className="d-block">{adminData.id}</p>
                   </p>
                 </Col>
               </Row>
-
               <Row>
                 <Col>
                   <p className="text-sm">
@@ -71,11 +51,22 @@ return (
                 <Col>
                   <p className="text-sm">
                     <b>Password</b>
-                    <p className="d-block">{"**********"}</p>
+                    <p className="d-block">{adminData.password}</p>
                   </p>
                 </Col>
               </Row>
-
+              <Row>
+                <Col>
+                  <p className="text-sm">
+                  <b>Date & Time Joined</b>
+                  <p className="d-block">
+                      {`${
+                        adminData.timeStamp? new Date(adminData.timeStamp.seconds * 1000).toLocaleString() : ""
+                      }`}
+                    </p>
+                  </p>
+                </Col>
+              </Row>
             </div>
           </Col>
         </Row>

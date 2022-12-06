@@ -35,32 +35,28 @@ export default UserSummaryModel;
 
 export const userColumns = [
   {
-    field: "uid",
+    field: "id",
     headerName: "User Id",
-    width: 220,
+    width: 350,
     headerAlign: "center",
     align: "center",
   },
   {
-    field: "email",
-    headerName: "Email",
-    width: 220,
-    headerAlign: "center",
-   
-  },
-  {
     field: "firstName",
-    headerName: "User Name",
-    width: 220,
-    headerAlign: "center",
-    align: "center"
-    
+    headerName: "First Name",
+    width: 120,
   },
   {
-    field: "dateJoined",
-    headerName: "Date Joined",
-    width: 220,
-    headerAlign: "center",
+    field: "lastName",
+    headerName: "Last Name",
+    width: 120,
   },
-  
+  {
+    field: "role",
+    headerName: "Role",
+    width: 200,
+    headerAlign: "center",
+    align: "center",
+  },
+
 ];
