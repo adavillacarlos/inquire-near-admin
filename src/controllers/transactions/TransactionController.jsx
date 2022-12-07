@@ -14,7 +14,6 @@ const TransactionController = (transactionId) => {
   );
 
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
 
   useEffect(() => {

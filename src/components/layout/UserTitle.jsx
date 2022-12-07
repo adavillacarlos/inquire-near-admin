@@ -7,7 +7,7 @@ const UserTitle = ({ title }) => {
         <div className="btn-right">
         <Stack spacing={2} direction="row">
             <div className="message-btn">Message User</div>
-            <div className="ban-btn">Ban User</div>
+            {/* <div className="ban-btn">Ban User</div> */}
         </Stack>
         </div>
 

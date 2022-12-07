@@ -39,37 +39,31 @@ export const reportColumns = [
   {
     field: "id",
     headerName: "Report Id",
-    width: 200,
+    width: 220,
+    headerAlign: "center",
+    align: "center",
+  },
+  {
+    field: "reporterId",
+    headerName: "Reporter ID",
+    width: 220,
+    headerAlign: "center",
+    align: "center",
+  },
+  {
+    field: "recepientId",
+    headerName: "Recepient ID",
+    width: 220,
     headerAlign: "center",
     align: "center",
   },
   {
     field: "title",
     headerName: "Report Title",
-    width: 200,
+    width: 220,
     headerAlign: "center",
     align: "center",
   },
-  {
-    field: "dateTimeCreated",
-    headerName: "Report Date",
-    width: 200,
-    headerAlign: "center",
-    align: "center",
-  },
-  {
-    field: "category",
-    headerName: "Category",
-    width: 150,
-    headerAlign: "center",
-    align: "center",
-  },
-  {
-    field: "isCompleted",
-    headerName: "Status",
-    width: 150,
-    headerAlign: "center",
-    align: "center",
-  },
+  
   
 ];

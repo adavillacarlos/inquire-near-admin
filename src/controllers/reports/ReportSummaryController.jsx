@@ -8,16 +8,18 @@ const ReportSummaryController = () => {
   const { deleteData, fetchData } = ReportSummaryModel(data, setData);
 
   const handleDelete = (id) => {
+    console.log(id); 
     deleteData(id);
   };
 
   useEffect(() => {
     const unsubscribe = fetchData;
-    
+    const undelete = deleteData; 
+
     return () => {
       setData([]);
       unsubscribe();
-   
+      undelete(); 
     };
   }, []);
 
@@ -25,7 +27,7 @@ const ReportSummaryController = () => {
     {
       field: "decision",
       headerName: "Action",
-      width: 220,
+      width: 250,
       headerAlign: "center",
       align: "center",
       renderCell: (params) => {

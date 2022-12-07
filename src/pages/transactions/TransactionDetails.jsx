@@ -4,7 +4,6 @@ import Navbar from "../../components/layout/Navbar";
 import Title from "../../components/layout/Title";
 import Transaction from "../../components/transactions/Transaction";
 
-
 const TransactionDetails = () => {
   return (
     <div className="layout">

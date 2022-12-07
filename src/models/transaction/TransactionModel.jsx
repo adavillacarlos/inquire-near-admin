@@ -1,4 +1,3 @@
-
 import {
   doc,
   query,
@@ -8,8 +7,8 @@ import {
   getDocs,
 } from "firebase/firestore";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
-
 import { db } from "../../app/firebase";
+
 const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
   const getTransactionData = async (transactionId) => {
     try{
@@ -41,9 +40,7 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
           ...transactionSnap.data(), 
         }); 
         setInquiryData(list);
-
       }
-
     } catch {
 
     }

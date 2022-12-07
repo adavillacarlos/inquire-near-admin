@@ -20,4 +20,4 @@ const Reports = () => {
   );
 };
 
-export default Reports;
+export default (Reports);
