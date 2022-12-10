@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import UserSummaryModel from "../../models/user/UserSummaryModel";
  
-const UserSummaryController = () => {
+  const UserSummaryController = () => {
   const [data, setData] = useState([]);
   const {deleteData,fetchData } = UserSummaryModel(data, setData);
 
   const handleDelete = (id) => {
+    console.log(id); 
     deleteData(id);
   };
 
   useEffect(() => {
     const unsubscribe = fetchData;
+    const undelete = deleteData; 
       return () => {
         setData([]);
         unsubscribe();
+        undelete(); 
     };
   }, []);
 

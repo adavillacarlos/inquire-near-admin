@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import UserModel from "../../models/user/UserModel";
+  
 const UserController = (userId) => {
   const [userData, setUserData] = useState([]);
   const { getUserData } = UserModel(

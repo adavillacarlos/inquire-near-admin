@@ -44,7 +44,7 @@ const User = () => {
                   <Col>
                     <p className="text-sm">
                       <b>Email Address</b>
-                      <p className="d-block">{userData.email}</p>
+                      <p className="d-block">{userData.emailAddress}</p>
                     </p>
                   </Col>
                   <Col>

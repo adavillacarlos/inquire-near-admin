@@ -37,19 +37,25 @@ export const userColumns = [
   {
     field: "id",
     headerName: "User Id",
-    width: 350,
+    width: 220,
     headerAlign: "center",
     align: "center",
   },
   {
+    field: "emailAddress",
+    headerAlign: "center",
+    headerName: "Email",
+    width: 220,
+  },
+  {
     field: "firstName",
     headerName: "First Name",
-    width: 120,
+    width: 150,
   },
   {
     field: "lastName",
     headerName: "Last Name",
-    width: 120,
+    width: 150,
   },
   {
     field: "role",

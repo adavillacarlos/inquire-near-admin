@@ -1,7 +1,7 @@
 import "./reports.scss";
 import Sidebar from "../../components/layout/Sidebar";
 import Navbar from "../../components/layout/Navbar";
-import Title from "../../components/layout/Title";
+import ReportTitle from "../../components/layout/ReportTitle";
 import Report from "../../components/reports/Report";
 
 const ReportDetails = () => {
@@ -11,7 +11,7 @@ const ReportDetails = () => {
           <div className="main">
             <div className="container">
               <Navbar />
-              <Title title="Report" />
+              <ReportTitle title="Report" />
               <div className="viewContainer">
                  <Report /> 
               </div>

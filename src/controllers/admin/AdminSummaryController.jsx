@@ -1,6 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 import AdminSummaryModel from "../../models/admin/AdminSummaryModel";
 
   const AdminSummaryController = () => {
@@ -8,14 +7,17 @@ import AdminSummaryModel from "../../models/admin/AdminSummaryModel";
   const { deleteData, fetchData } = AdminSummaryModel(data, setData);
 
   const handleDelete = (id) => {
+    console.log(id); 
     deleteData(id);
   };
 
   useEffect(() => {
     const unsubscribe = fetchData;
+    const undelete = deleteData; 
     return () => {
       setData([]);
       unsubscribe();
+      undelete(); 
     };
   }, []);
 

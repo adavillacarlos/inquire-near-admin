@@ -24,3 +24,19 @@ export const adminInputs = [
   },
 
 ];
+
+export const messageUser = [
+ 
+  {
+    id: "subject",
+    label: "Subject",
+    type: "text",
+  },
+  {
+    id: "message",
+    label: "Message",
+    type: "text",
+  },
+  
+
+];

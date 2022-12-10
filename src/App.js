@@ -2,6 +2,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import SignIn from "./pages/signIn/SignIn";
 import UserList from "./pages/userSummary/Users";
 import UserDetails from "./pages/userView/User";
+//import ContactPage from "./pages/userView/User";
 import Admins from "./pages/adminSummary/adminSummary";
 import Single from "./pages/adminView/Single";
 import New from "./pages/adminNew/New";
