@@ -2,7 +2,7 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import SignIn from "./pages/signIn/SignIn";
 import UserList from "./pages/userSummary/Users";
 import UserDetails from "./pages/userView/User";
-//import ContactPage from "./pages/userView/User";
+import Message from "./pages/messageUser/messageUser";
 import Admins from "./pages/adminSummary/adminSummary";
 import Single from "./pages/adminView/Single";
 import New from "./pages/adminNew/New";
@@ -13,7 +13,8 @@ import Transactions from "./pages/transactions/Transactions";
 import TransactionDetails from "./pages/transactions/TransactionDetails";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import {AuthContext} from "./context/AuthContext"; 
-import { Suspense, useContext } from "react";
+import {useContext } from "react";
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const {currentUser} = useContext(AuthContext);
@@ -52,6 +53,14 @@ function App() {
                   </RequireAuth>
                 }
               />
+                <Route
+                path="/users/message"
+                element={
+                  <RequireAuth>
+                    <Message title="Compose Message" />
+                  </RequireAuth>
+                }
+              />    
             </Route>
             <Route path="transactions">
               <Route
@@ -116,7 +125,6 @@ function App() {
                 }
               />
             </Route>
-
           </Route>
         </Routes>
       </BrowserRouter>

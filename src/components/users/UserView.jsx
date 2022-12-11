@@ -3,7 +3,6 @@ import Col from "react-bootstrap/Col";
 import { useParams } from "react-router-dom";
 import UserController from "../../controllers/user/UserController";
 
-
 const User = () => {
   const { userId } = useParams();
   const { userData } = UserController(userId);
