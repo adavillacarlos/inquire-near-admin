@@ -9,10 +9,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../context/AuthContext";
 import { googleLogout } from "@react-oauth/google";
+import {useHistory} from "react-router-dom"; 
+
 const Sidebar = () => {
   const { dispatch } = useContext(AuthContext);
   const navigate = useNavigate();
-
    return (
     <div className="sidebar">
       <div className="top">
@@ -62,14 +63,14 @@ const Sidebar = () => {
 
       <div className="bottom" style={{ position: "absolute", bottom: 150 }}>
         <ul>
-       
           <li>
             <LogoutIcon className="icon" />
             <span
               onClick={() => {
+                window.location.href='https://inquire-near-2022.web.app'; 
                 dispatch({ type: "SIGNOUT" }) || googleLogout();
-                navigate("/");
-                window.location.reload(false); 
+                // navigate("/signin");
+                // window.location.reload(false);
               }}
             >
               Logout

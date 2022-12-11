@@ -7,6 +7,7 @@ const AuthReducer = (state, action) => {
     }
     case "SIGNOUT": {
       localStorage.clear();
+      window.location.href='https://inquire-near-2022.web.app'; 
       break; 
     }
     default:

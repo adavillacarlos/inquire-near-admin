@@ -7,9 +7,8 @@ const LogoutController = () => {
   const navigate = useNavigate(); 
   const { dispatch } = useContext(AuthContext);
   const handleLogout = () => {
-    console.log("Clicked"); 
     dispatch({ type: "SIGNOUT" }) || googleLogout(); 
-    navigate("/");
+    //navigate("/signin")
   };
   return handleLogout;
 };
