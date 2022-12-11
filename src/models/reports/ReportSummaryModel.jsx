@@ -52,7 +52,7 @@ export const reportColumns = [
   },
   {
     field: "recepientId",
-    headerName: "Recepient ID",
+    headerName: "Recipient ID",
     width: 220,
     headerAlign: "center",
     align: "center",
