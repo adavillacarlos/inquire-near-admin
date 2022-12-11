@@ -10,6 +10,7 @@ import {
   inquiryColumns,
 } from "../../models/transaction/TransactionModel";
 import TransactionController from "../../controllers/transactions/TransactionController";
+import './styles.scss'
 
 const Transaction = () => {
   const { transactionId } = useParams();
@@ -146,13 +147,14 @@ const Transaction = () => {
             </Col>
           </Row>
           <Row className="mt-5">
-            <Col className="">
+            <Col className=""  id="inquiries">
         
               <div className="datatable" style={{ height: 400 }}>
                 <DataGrid
+               
                   rows={inquiryList}
-                  // rows={transactionData ? transactionData.inquiryListData : inquiryRows}
 
+                  // rows={transactionData ? transactionData.inquiryListData : inquiryRows}
                   columns={inquiryColumns.concat(actionColumn)}
                   pageSize={5}
                   rowsPerPageOptions={[5]}
