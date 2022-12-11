@@ -68,7 +68,7 @@ const Sidebar = () => {
             <span
               onClick={() => {
                 dispatch({ type: "SIGNOUT" }) || googleLogout();
-                navigate("/signin");
+                navigate("/");
                 window.location.reload(false); 
               }}
             >

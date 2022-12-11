@@ -9,7 +9,7 @@ const LogoutController = () => {
   const handleLogout = () => {
     console.log("Clicked"); 
     dispatch({ type: "SIGNOUT" }) || googleLogout(); 
-    navigate("/signin");
+    navigate("/");
   };
   return handleLogout;
 };
