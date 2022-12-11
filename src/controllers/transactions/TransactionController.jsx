@@ -6,7 +6,6 @@ const TransactionController = (transactionId) => {
   const [inquiryData, setInquiryData] = useState([]);
   const [modalTitle, setModalTitle] = useState(""); 
   const [image, setImage] = useState([]); 
-
   const { getTransactionData, getImage } = TransactionModel(
     setTransactionData,
     setInquiryData, 
@@ -27,7 +26,6 @@ const TransactionController = (transactionId) => {
   const handleAnswerUrl = (row) => {
     setModalTitle("Proof Image"); 
     setShow(true); 
-    //TO DO: to change to answer_image once it is saved
     getImage(row.inquiryListId, row.id,"answer_image"); 
   };
 
@@ -36,8 +34,6 @@ const TransactionController = (transactionId) => {
     setModalTitle("Client Image"); 
     setShow(true); 
     getImage(row.inquiryListId, row.id,"inquiry_image"); 
-    // console.log("Client");
-    // https://firebasestorage.googleapis.com/v0/b/inquire-near-2022.appspot.com/o/client_id%2Finquiry_id_inquiry_image?alt=media&token=bbe2aa9d-a0c9-408e-807d-bb9c5bbe7eff
   };
 
   const actionColumn = [

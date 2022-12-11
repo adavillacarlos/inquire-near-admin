@@ -2,7 +2,6 @@ import Button from "react-bootstrap/Button";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Modal from "react-bootstrap/Modal";
-//import Inquiries from "./Inquiries";
 import { useParams } from "react-router-dom";
 import { DataGrid } from "@mui/x-data-grid";
 import {
@@ -25,8 +24,6 @@ const Transaction = () => {
   } = TransactionController(transactionId);
 
   const inquiryList = inquiryData ? inquiryData : inquiryRows;
-  // const inquiryList = transactionData.inquiryListData.inquiryList ? transactionData.inquiryListData.inquiryList.map((value, index) => ({id: index, ...value})) : [];
-  // console.log(transactionData ? transactionData.inquiryListData : "");
 
   return (
     <div data-testid="transactiondetails">

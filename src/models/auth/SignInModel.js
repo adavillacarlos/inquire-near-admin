@@ -11,7 +11,6 @@ const SignInModel = () => {
   const authenticateEmailPassword = useCallback((email, password, setError) => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-       // return db.collection('users').doc(userCredential.user.uid).set({})
         // Signed in
         const user = userCredential.user;
         dispatch({ type: "SIGNIN", payload: user });

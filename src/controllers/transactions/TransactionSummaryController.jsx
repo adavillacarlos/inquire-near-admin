@@ -2,14 +2,12 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import TransactionSummaryModel from "../../models/transaction/TransactionSummaryModel";
-// import { fetchData, transactionRows } from "../../models/transaction/TransactionModel";
 const TransactionSummaryController = () => {
   const [data, setData] = useState([]);
   const { deleteData, fetchData } = TransactionSummaryModel(data, setData);
 
   const handleDelete = (id) => {
     console.log(id); 
-    // deleteData(id);
     deleteData(id);
   };
 

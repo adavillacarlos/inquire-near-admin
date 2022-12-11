@@ -1,10 +1,8 @@
 import "./layout.scss";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import DashboardRoundedIcon from "@mui/icons-material/DashboardRounded";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import ReportIcon from "@mui/icons-material/Report";
-import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import { Link, useNavigate } from "react-router-dom";
@@ -64,10 +62,7 @@ const Sidebar = () => {
 
       <div className="bottom" style={{ position: "absolute", bottom: 150 }}>
         <ul>
-          <li>
-            <SettingsIcon className="icon" />
-            <span>Settings</span>
-          </li>
+       
           <li>
             <LogoutIcon className="icon" />
             <span

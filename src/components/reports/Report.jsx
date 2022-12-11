@@ -5,8 +5,6 @@ import Col from "react-bootstrap/Col";
 import { useParams } from "react-router-dom";
 import ReportController from "../../controllers/reports/ReportController";
 
-
-
 const Report = () => {
   const { reportId } = useParams();
   const { reportData } = ReportController(reportId);

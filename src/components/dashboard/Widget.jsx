@@ -1,11 +1,7 @@
 import "../style.scss";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-import DashboardController from "../../controllers/dashboard/DashboardController";
-import DashboardModel from "../../models/dashboard/DashboardModel";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 const Widget = ({ type, summary }) => {
   let data;

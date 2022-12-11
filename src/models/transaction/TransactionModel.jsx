@@ -51,13 +51,11 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
     setImage([]);
     const storage = getStorage();
     const pathReference = ref(storage, 'gs://inquire-near-2022.appspot.com/' + inquiryListId + '/' + inquiryId + '_' + kindImage);
-    // console.log('gs://inquire-near-2022.appspot.com/' + inquiryListID + '/' + inquiryId + '_' + kindImage + '.jpeg'); 
     // Get the download URL
     getDownloadURL(pathReference)
       .then((url) => {
         // Insert url into an <img> tag to "download"
         setImage(url); 
-        // console.log(url); 
       })
       .catch((error) => {
         // A full list of error codes is available at
@@ -84,36 +82,6 @@ const TransactionModel = (setTransactionData, setInquiryData, setImage) => {
         }
       });
   };
-
-  // const getClientData = async (cid) => {
-  //   try {
-  //     const docRef = doc(db, "users", cid);
-  //     const docSnap = await getDoc(docRef);
-  //     if (docSnap.exists()) {
-  //       setClientData({ id: docSnap.id, ...docSnap.data() });
-  //     } else {
-  //       // doc.data() will be undefined in this case
-  //       console.log("No such document!");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const getInquirerData = async (iid) => {
-  //   try {
-  //     const docRef = doc(db, "users", iid);
-  //     const docSnap = await getDoc(docRef);
-  //     if (docSnap.exists()) {
-  //       setInquirerData({ id: docSnap.id, ...docSnap.data() });
-  //     } else {
-  //       // doc.data() will be undefined in this case
-  //       console.log("No such document!");
-  //     }
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
 
   return {
     getTransactionData,

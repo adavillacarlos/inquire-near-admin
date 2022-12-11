@@ -8,21 +8,6 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  { name: "Jan", Total: 12 },
-  { name: "Feb", Total: 5 },
-  { name: "Mar", Total: 8 },
-  { name: "Apr", Total: 16 },
-  { name: "May", Total: 9 },
-  { name: "Jun", Total: 17 },
-  { name: "Jul", Total: 12 },
-  { name: "Aug", Total: 13 },
-  { name: "Sep", Total: 8 },
-  { name: "Oct", Total: 16 },
-  { name: "Nov", Total: 9 },
-  { name: "Dec", Total: 6 },
-];
-
 const Chart = ({ aspect, title, summary }) => {
   return (
     <div className="chart">
