@@ -37,7 +37,7 @@ const Report = () => {
                   </Col>
                   <Col>
                     <p className="text-sm">
-                    <b className="d-block">Recepient </b>
+                    <b className="d-block">Recipient </b>
                       
                         {`${
                           reportData.recepient
