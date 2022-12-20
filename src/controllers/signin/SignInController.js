@@ -17,7 +17,7 @@ const SignInController = () => {
   //Required Sign Up with Google Sign In for the Admin
   const handleGoogleSignIn = (credentialResponse) => {
     var decoded = jwt_decode(credentialResponse.credential);
-    const password = "password"; 
+    const password = "generic123"; 
     authenticateGmailPassword(decoded.email,password); 
   };
 
