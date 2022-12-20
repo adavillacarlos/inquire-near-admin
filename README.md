@@ -5,7 +5,7 @@ InquireNear Admin is a web application that oversees all the processes in the mo
 
 ## Demo
 
-https://inquire-near-2022.web.app/signin
+https://inquire-near-2022.web.app
 
 
 ## Run Locally
